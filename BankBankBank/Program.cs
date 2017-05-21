@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Text.RegularExpressions;
 namespace BankBankBank
 {
 	static class Program
@@ -27,17 +28,22 @@ namespace BankBankBank
 			base.OnKeyPress(e);
 			string keyInput = e.KeyChar.ToString();
 
-			if (Char.IsDigit(e.KeyChar) || e.KeyChar == '\b')
-			{
-				if (Text.Length >= 6 && Char.IsDigit(e.KeyChar))
-				{
-					Text = "1000000";
-					e.Handled = true;
-				}
-			}
-			else
+			if (!Char.IsDigit(e.KeyChar) && e.KeyChar != '\b' && e.KeyChar!=',')
 			{
 				e.Handled = true;
+			}
+			else if (Text.Length > 4)
+			{
+				Text = "0";
+				e.Handled = true;
+			}
+		}
+		protected override void OnLeave(EventArgs e)
+		{
+			base.OnLeave(e);
+			if (Text.Length == 0)
+			{
+				Text = "0";
 			}
 		}
 		public int IntValue
@@ -70,55 +76,11 @@ namespace BankBankBank
 
 	public class Bank
 	{
-		private string country,city,address,controlform;
 		public string Name;
-		public string Country {
-			get
-			{
-				return country;
-			}
-			set
-			{
-				if (value == "") country = "Неизвестно";
-				else country = value;
-			}
-		} 
-		public string City
-		{
-			get
-			{
-				return city;
-			}
-			set
-			{
-				if (value == "") city = "Неизвестно";
-				else city = value;
-			}
-		}
-		public string Address
-		{
-			get
-			{
-				return address;
-			}
-			set
-			{
-				if (value == "") address = "Неизвестно";
-				else address = value;
-			}
-		}
-		public string ControlForm
-		{
-			get
-			{
-				return controlform;
-			}
-			set
-			{
-				if (value == "") controlform = "Неизвестно";
-				else controlform = value;
-			}
-		}
+		public string Country;
+		public string City;
+		public string Address;
+		public string ControlForm;
 		public double Percent;
 		public int Term;
 		public bool PosToAdd;
@@ -170,21 +132,46 @@ namespace BankBankBank
 				return "Есть";
 			}
 			else return "Нет";
-		}
+		}//Преобразование boolean в строку
 		public static string[] ConvertData(string[] data) {
-			data[7] = Bank.ConvertBoolData(data[7]);
-			data[8] = Bank.ConvertBoolData(data[8]);
+			data[7] = ConvertBoolData(data[7]);
+			data[8] = ConvertBoolData(data[8]);
 			if (data[9] == "True")
 			{
 				data[9] = "На текущий счет";
 			}
 			else data[9] = "На карту";
 			return data;
-		}
+		}//Преобразование данных
 		public bool isSuitable(string control, string country, bool pos) {
 			return ((ControlForm == control || control == "Не имеет значения" || control == "")
 							&& (Country == country || country == "Не имеет значения" || country == "")
 							&& (PosToAdd == pos));
-		}
+		}//Проверка данных банка при поиске
+		public static string TryConvertToCountry(string input)
+		{
+			input = input.Trim();
+			while (input.Contains("  "))
+			{
+				input = input.Replace("  ", " ");
+			}
+			Regex checkCountry = new Regex((@"^[а-яА-Я]+(\s?\-?\s?[а-яА-Я]+){0,2}$"));
+			if (checkCountry.IsMatch(input))
+			{
+				char[] letters = input.ToCharArray();
+				letters[0] = Char.ToUpper(letters[0]);
+				for (int i = 1; i < letters.Length; i++)
+				{
+					if (letters[i - 1] == ' ' || letters[i - 1] == '-')
+					{
+						letters[i] = Char.ToUpper(letters[i]);
+					}
+					else letters[i] = Char.ToLower(letters[i]);
+				}
+				string result2 = new string(letters);
+				return result2;
+			}
+			else throw new ArgumentException();
+		}//Преобразование строки в страну
 	}
 }

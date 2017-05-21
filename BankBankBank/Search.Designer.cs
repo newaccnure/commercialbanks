@@ -31,19 +31,19 @@
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Search));
-			this.button1 = new System.Windows.Forms.Button();
-			this.button2 = new System.Windows.Forms.Button();
-			this.numericTextBox1 = new BankBankBank.NumericTextBox();
-			this.trackBar1 = new System.Windows.Forms.TrackBar();
-			this.label1 = new System.Windows.Forms.Label();
-			this.comboBox1 = new System.Windows.Forms.ComboBox();
-			this.label2 = new System.Windows.Forms.Label();
-			this.label3 = new System.Windows.Forms.Label();
-			this.comboBox2 = new System.Windows.Forms.ComboBox();
-			this.label4 = new System.Windows.Forms.Label();
-			this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-			this.label5 = new System.Windows.Forms.Label();
-			this.checkBox1 = new System.Windows.Forms.CheckBox();
+			this.MainMenuButton = new System.Windows.Forms.Button();
+			this.SearchButton = new System.Windows.Forms.Button();
+			this.SumNumericBox = new BankBankBank.NumericTextBox();
+			this.SumTrackBar = new System.Windows.Forms.TrackBar();
+			this.SumLabel = new System.Windows.Forms.Label();
+			this.ControlFormbox = new System.Windows.Forms.ComboBox();
+			this.ControlFormLabel = new System.Windows.Forms.Label();
+			this.CountryLabel = new System.Windows.Forms.Label();
+			this.CountryBox = new System.Windows.Forms.ComboBox();
+			this.TermLabel = new System.Windows.Forms.Label();
+			this.Termbox = new System.Windows.Forms.NumericUpDown();
+			this.PosToAddLabel = new System.Windows.Forms.Label();
+			this.PosToAddbox = new System.Windows.Forms.CheckBox();
 			this.dataGridView2 = new System.Windows.Forms.DataGridView();
 			this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,166 +55,168 @@
 			this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+			this.label6 = new System.Windows.Forms.Label();
+			this.ReturnToBaseButton = new System.Windows.Forms.Button();
+			((System.ComponentModel.ISupportInitialize)(this.SumTrackBar)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.Termbox)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
 			this.SuspendLayout();
 			// 
-			// button1
+			// MainMenuButton
 			// 
-			this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.button1.Location = new System.Drawing.Point(727, 579);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(221, 76);
-			this.button1.TabIndex = 0;
-			this.button1.Text = "Главное меню";
-			this.button1.UseVisualStyleBackColor = true;
-			this.button1.Click += new System.EventHandler(this.button1_Click);
+			this.MainMenuButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.MainMenuButton.Location = new System.Drawing.Point(398, 589);
+			this.MainMenuButton.Name = "MainMenuButton";
+			this.MainMenuButton.Size = new System.Drawing.Size(221, 76);
+			this.MainMenuButton.TabIndex = 0;
+			this.MainMenuButton.Text = "Главное меню";
+			this.MainMenuButton.UseVisualStyleBackColor = true;
+			this.MainMenuButton.Click += new System.EventHandler(this.button1_Click);
 			// 
-			// button2
+			// SearchButton
 			// 
-			this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.button2.Location = new System.Drawing.Point(279, 579);
-			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(221, 76);
-			this.button2.TabIndex = 1;
-			this.button2.Text = "Поиск";
-			this.button2.UseVisualStyleBackColor = true;
-			this.button2.Click += new System.EventHandler(this.button2_Click);
+			this.SearchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.SearchButton.Location = new System.Drawing.Point(86, 589);
+			this.SearchButton.Name = "SearchButton";
+			this.SearchButton.Size = new System.Drawing.Size(221, 76);
+			this.SearchButton.TabIndex = 1;
+			this.SearchButton.Text = "Поиск";
+			this.SearchButton.UseVisualStyleBackColor = true;
+			this.SearchButton.Click += new System.EventHandler(this.button2_Click);
 			// 
-			// numericTextBox1
+			// SumNumericBox
 			// 
-			this.numericTextBox1.AllowSpace = false;
-			this.numericTextBox1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.numericTextBox1.Location = new System.Drawing.Point(17, 132);
-			this.numericTextBox1.Name = "numericTextBox1";
-			this.numericTextBox1.Size = new System.Drawing.Size(89, 22);
-			this.numericTextBox1.TabIndex = 2;
-			this.numericTextBox1.Text = "0";
-			this.numericTextBox1.TextChanged += new System.EventHandler(this.numericTextBox1_TextChanged);
+			this.SumNumericBox.AllowSpace = false;
+			this.SumNumericBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.SumNumericBox.Location = new System.Drawing.Point(17, 132);
+			this.SumNumericBox.Name = "SumNumericBox";
+			this.SumNumericBox.Size = new System.Drawing.Size(89, 22);
+			this.SumNumericBox.TabIndex = 2;
+			this.SumNumericBox.Text = "0";
+			this.SumNumericBox.TextChanged += new System.EventHandler(this.numericTextBox1_TextChanged);
 			// 
-			// trackBar1
+			// SumTrackBar
 			// 
-			this.trackBar1.AllowDrop = true;
-			this.trackBar1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.trackBar1.Location = new System.Drawing.Point(12, 70);
-			this.trackBar1.Maximum = 10000;
-			this.trackBar1.Name = "trackBar1";
-			this.trackBar1.Size = new System.Drawing.Size(140, 56);
-			this.trackBar1.TabIndex = 3;
-			this.trackBar1.TickStyle = System.Windows.Forms.TickStyle.None;
-			this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
+			this.SumTrackBar.AllowDrop = true;
+			this.SumTrackBar.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.SumTrackBar.Location = new System.Drawing.Point(12, 70);
+			this.SumTrackBar.Maximum = 10000;
+			this.SumTrackBar.Name = "SumTrackBar";
+			this.SumTrackBar.Size = new System.Drawing.Size(140, 56);
+			this.SumTrackBar.TabIndex = 3;
+			this.SumTrackBar.TickStyle = System.Windows.Forms.TickStyle.None;
+			this.SumTrackBar.Scroll += new System.EventHandler(this.trackBar1_Scroll);
 			// 
-			// label1
+			// SumLabel
 			// 
-			this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.label1.AutoSize = true;
-			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.label1.Location = new System.Drawing.Point(14, 24);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(63, 20);
-			this.label1.TabIndex = 4;
-			this.label1.Text = "Сумма";
+			this.SumLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.SumLabel.AutoSize = true;
+			this.SumLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.SumLabel.Location = new System.Drawing.Point(14, 24);
+			this.SumLabel.Name = "SumLabel";
+			this.SumLabel.Size = new System.Drawing.Size(63, 20);
+			this.SumLabel.TabIndex = 4;
+			this.SumLabel.Text = "Сумма";
 			// 
-			// comboBox1
+			// ControlFormbox
 			// 
-			this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.comboBox1.FormattingEnabled = true;
-			this.comboBox1.Items.AddRange(new object[] {
+			this.ControlFormbox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.ControlFormbox.FormattingEnabled = true;
+			this.ControlFormbox.Items.AddRange(new object[] {
             "Акционерная",
             "Кооперативная",
             "Государственная",
             "Муниципальная",
             "Межгосударственная",
             "Не имеет значения"});
-			this.comboBox1.Location = new System.Drawing.Point(359, 69);
-			this.comboBox1.Name = "comboBox1";
-			this.comboBox1.Size = new System.Drawing.Size(196, 24);
-			this.comboBox1.TabIndex = 5;
-			this.comboBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.comboBox1_KeyDown);
-			this.comboBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox1_KeyPress);
+			this.ControlFormbox.Location = new System.Drawing.Point(359, 69);
+			this.ControlFormbox.Name = "ControlFormbox";
+			this.ControlFormbox.Size = new System.Drawing.Size(196, 24);
+			this.ControlFormbox.TabIndex = 5;
+			this.ControlFormbox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.comboBox1_KeyDown);
+			this.ControlFormbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox1_KeyPress);
 			// 
-			// label2
+			// ControlFormLabel
 			// 
-			this.label2.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.label2.AutoSize = true;
-			this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.label2.Location = new System.Drawing.Point(356, 24);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(199, 20);
-			this.label2.TabIndex = 6;
-			this.label2.Text = "Форма собственности";
+			this.ControlFormLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.ControlFormLabel.AutoSize = true;
+			this.ControlFormLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.ControlFormLabel.Location = new System.Drawing.Point(356, 24);
+			this.ControlFormLabel.Name = "ControlFormLabel";
+			this.ControlFormLabel.Size = new System.Drawing.Size(199, 20);
+			this.ControlFormLabel.TabIndex = 6;
+			this.ControlFormLabel.Text = "Форма собственности";
 			// 
-			// label3
+			// CountryLabel
 			// 
-			this.label3.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.label3.AutoSize = true;
-			this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.label3.Location = new System.Drawing.Point(641, 24);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(71, 20);
-			this.label3.TabIndex = 7;
-			this.label3.Text = "Страна\r\n";
+			this.CountryLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.CountryLabel.AutoSize = true;
+			this.CountryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.CountryLabel.Location = new System.Drawing.Point(641, 24);
+			this.CountryLabel.Name = "CountryLabel";
+			this.CountryLabel.Size = new System.Drawing.Size(71, 20);
+			this.CountryLabel.TabIndex = 7;
+			this.CountryLabel.Text = "Страна\r\n";
 			// 
-			// comboBox2
+			// CountryBox
 			// 
-			this.comboBox2.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.comboBox2.FormattingEnabled = true;
-			this.comboBox2.Items.AddRange(new object[] {
+			this.CountryBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.CountryBox.FormattingEnabled = true;
+			this.CountryBox.Items.AddRange(new object[] {
             "Не имеет значения"});
-			this.comboBox2.Location = new System.Drawing.Point(582, 68);
-			this.comboBox2.Name = "comboBox2";
-			this.comboBox2.Size = new System.Drawing.Size(196, 24);
-			this.comboBox2.TabIndex = 8;
-			this.comboBox2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.comboBox2_KeyDown);
-			this.comboBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox2_KeyPress);
+			this.CountryBox.Location = new System.Drawing.Point(572, 70);
+			this.CountryBox.Name = "CountryBox";
+			this.CountryBox.Size = new System.Drawing.Size(212, 24);
+			this.CountryBox.TabIndex = 8;
+			this.CountryBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.comboBox2_KeyDown);
+			this.CountryBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox2_KeyPress);
 			// 
-			// label4
+			// TermLabel
 			// 
-			this.label4.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.label4.AutoSize = true;
-			this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.label4.Location = new System.Drawing.Point(171, 24);
-			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(152, 20);
-			this.label4.TabIndex = 9;
-			this.label4.Text = "*Срок(в месяцах)";
+			this.TermLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.TermLabel.AutoSize = true;
+			this.TermLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.TermLabel.Location = new System.Drawing.Point(171, 24);
+			this.TermLabel.Name = "TermLabel";
+			this.TermLabel.Size = new System.Drawing.Size(152, 20);
+			this.TermLabel.TabIndex = 9;
+			this.TermLabel.Text = "*Срок(в месяцах)";
 			// 
-			// numericUpDown1
+			// Termbox
 			// 
-			this.numericUpDown1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.numericUpDown1.Location = new System.Drawing.Point(187, 70);
-			this.numericUpDown1.Maximum = new decimal(new int[] {
+			this.Termbox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.Termbox.Location = new System.Drawing.Point(187, 70);
+			this.Termbox.Maximum = new decimal(new int[] {
             1000,
             0,
             0,
             0});
-			this.numericUpDown1.Name = "numericUpDown1";
-			this.numericUpDown1.Size = new System.Drawing.Size(120, 22);
-			this.numericUpDown1.TabIndex = 10;
+			this.Termbox.Name = "Termbox";
+			this.Termbox.Size = new System.Drawing.Size(120, 22);
+			this.Termbox.TabIndex = 10;
 			// 
-			// label5
+			// PosToAddLabel
 			// 
-			this.label5.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.label5.AutoSize = true;
-			this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.label5.Location = new System.Drawing.Point(796, 24);
-			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(228, 20);
-			this.label5.TabIndex = 12;
-			this.label5.Text = "Возможность пополнения";
+			this.PosToAddLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.PosToAddLabel.AutoSize = true;
+			this.PosToAddLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.PosToAddLabel.Location = new System.Drawing.Point(796, 24);
+			this.PosToAddLabel.Name = "PosToAddLabel";
+			this.PosToAddLabel.Size = new System.Drawing.Size(228, 20);
+			this.PosToAddLabel.TabIndex = 12;
+			this.PosToAddLabel.Text = "Возможность пополнения";
 			// 
-			// checkBox1
+			// PosToAddbox
 			// 
-			this.checkBox1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.checkBox1.AutoSize = true;
-			this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.checkBox1.Location = new System.Drawing.Point(800, 70);
-			this.checkBox1.Name = "checkBox1";
-			this.checkBox1.Size = new System.Drawing.Size(72, 24);
-			this.checkBox1.TabIndex = 13;
-			this.checkBox1.Text = "Есть";
-			this.checkBox1.UseVisualStyleBackColor = true;
+			this.PosToAddbox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.PosToAddbox.AutoSize = true;
+			this.PosToAddbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.PosToAddbox.Location = new System.Drawing.Point(800, 70);
+			this.PosToAddbox.Name = "PosToAddbox";
+			this.PosToAddbox.Size = new System.Drawing.Size(72, 24);
+			this.PosToAddbox.TabIndex = 13;
+			this.PosToAddbox.Text = "Есть";
+			this.PosToAddbox.UseVisualStyleBackColor = true;
 			// 
 			// dataGridView2
 			// 
@@ -309,34 +311,55 @@
 			this.Column10.Name = "Column10";
 			this.Column10.ReadOnly = true;
 			// 
+			// label6
+			// 
+			this.label6.AutoSize = true;
+			this.label6.Location = new System.Drawing.Point(579, 132);
+			this.label6.Name = "label6";
+			this.label6.Size = new System.Drawing.Size(0, 17);
+			this.label6.TabIndex = 24;
+			// 
+			// ReturnToBaseButton
+			// 
+			this.ReturnToBaseButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.ReturnToBaseButton.Location = new System.Drawing.Point(730, 589);
+			this.ReturnToBaseButton.Name = "ReturnToBaseButton";
+			this.ReturnToBaseButton.Size = new System.Drawing.Size(210, 75);
+			this.ReturnToBaseButton.TabIndex = 25;
+			this.ReturnToBaseButton.Text = "Вернуться к базе банков";
+			this.ReturnToBaseButton.UseVisualStyleBackColor = true;
+			this.ReturnToBaseButton.Click += new System.EventHandler(this.button3_Click);
+			// 
 			// Search
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.SystemColors.Window;
 			this.ClientSize = new System.Drawing.Size(1232, 703);
+			this.Controls.Add(this.ReturnToBaseButton);
+			this.Controls.Add(this.label6);
 			this.Controls.Add(this.dataGridView2);
-			this.Controls.Add(this.checkBox1);
-			this.Controls.Add(this.label5);
-			this.Controls.Add(this.numericUpDown1);
-			this.Controls.Add(this.label4);
-			this.Controls.Add(this.comboBox2);
-			this.Controls.Add(this.label3);
-			this.Controls.Add(this.label2);
-			this.Controls.Add(this.comboBox1);
-			this.Controls.Add(this.label1);
-			this.Controls.Add(this.trackBar1);
-			this.Controls.Add(this.numericTextBox1);
-			this.Controls.Add(this.button2);
-			this.Controls.Add(this.button1);
+			this.Controls.Add(this.PosToAddbox);
+			this.Controls.Add(this.PosToAddLabel);
+			this.Controls.Add(this.Termbox);
+			this.Controls.Add(this.TermLabel);
+			this.Controls.Add(this.CountryBox);
+			this.Controls.Add(this.CountryLabel);
+			this.Controls.Add(this.ControlFormLabel);
+			this.Controls.Add(this.ControlFormbox);
+			this.Controls.Add(this.SumLabel);
+			this.Controls.Add(this.SumTrackBar);
+			this.Controls.Add(this.SumNumericBox);
+			this.Controls.Add(this.SearchButton);
+			this.Controls.Add(this.MainMenuButton);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "Search";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Поиск банка";
 			this.Load += new System.EventHandler(this.Search_Load);
-			((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.SumTrackBar)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.Termbox)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
@@ -345,19 +368,19 @@
 
 		#endregion
 
-		private System.Windows.Forms.Button button1;
-		private System.Windows.Forms.Button button2;
-		private NumericTextBox numericTextBox1;
-		private System.Windows.Forms.TrackBar trackBar1;
-		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.ComboBox comboBox1;
-		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.Label label3;
-		private System.Windows.Forms.ComboBox comboBox2;
-		private System.Windows.Forms.Label label4;
-		private System.Windows.Forms.NumericUpDown numericUpDown1;
-		private System.Windows.Forms.Label label5;
-		private System.Windows.Forms.CheckBox checkBox1;
+		private System.Windows.Forms.Button MainMenuButton;
+		private System.Windows.Forms.Button SearchButton;
+		private NumericTextBox SumNumericBox;
+		private System.Windows.Forms.TrackBar SumTrackBar;
+		private System.Windows.Forms.Label SumLabel;
+		private System.Windows.Forms.ComboBox ControlFormbox;
+		private System.Windows.Forms.Label ControlFormLabel;
+		private System.Windows.Forms.Label CountryLabel;
+		private System.Windows.Forms.ComboBox CountryBox;
+		private System.Windows.Forms.Label TermLabel;
+		private System.Windows.Forms.NumericUpDown Termbox;
+		private System.Windows.Forms.Label PosToAddLabel;
+		private System.Windows.Forms.CheckBox PosToAddbox;
 		private System.Windows.Forms.DataGridView dataGridView2;
 		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
 		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
@@ -369,5 +392,7 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
+		private System.Windows.Forms.Label label6;
+		private System.Windows.Forms.Button ReturnToBaseButton;
 	}
 }

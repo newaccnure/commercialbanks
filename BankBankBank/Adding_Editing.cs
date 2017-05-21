@@ -18,7 +18,8 @@ namespace BankBankBank
 		{
 			InitializeComponent();
 		}
-		public static double Transform(string input) {
+		public static double Transform(string input)//Преобразование строки в тип double
+		{
 			double result;
 			if (input.IndexOf('.') != -1)
 			{
@@ -28,7 +29,7 @@ namespace BankBankBank
 			return result;
 		}
 
-		private void button1_Click(object sender, EventArgs e)
+		private void button1_Click(object sender, EventArgs e)//Сохранение базы данных и переход в главное меню 
 		{
 			StreamWriter output = new StreamWriter("dataBase.txt");
 			for (int i = 0; i < inputBase.Count(); i++) {
@@ -41,83 +42,61 @@ namespace BankBankBank
 			Dispose();
 		}
 
-		private void button2_Click(object sender, EventArgs e)
+		private void button2_Click(object sender, EventArgs e)//Обработка данных и добавление банка в базу 
 		{
 			double percents;
 			bool isFull = true;
-			if (textBox1.Text == "")
+			if (Namebox.Text == "")
 			{
-				label1.BackColor = Color.Red;
+				Namelabel.BackColor = Color.Red;
 				isFull = false;
 			}
-			else label1.BackColor = Color.White;
+			else Namelabel.BackColor = Color.White;
 
 			Regex regexp = new Regex(@"^[0-9]+([\,\.]{0,1}[0-9]+)?$");
-			if (!regexp.IsMatch(textBox5.Text)) {
-				label6.BackColor = Color.Red;
+			if (!regexp.IsMatch(Percentbox.Text)) {
+				PercentLabel.BackColor = Color.Red;
 				isFull = false;
 			}
-			else label6.BackColor = Color.White;
+			else PercentLabel.BackColor = Color.White;
 			
-			if (numericUpDown1.Value == 0)
+			if (Termbox.Value == 0)
 			{
-				label9.BackColor = Color.Red;
+				TermLabel.BackColor = Color.Red;
 				isFull = false;
 			}
-			else label9.BackColor = Color.White;
+			else TermLabel.BackColor = Color.White;
 
-			Regex regexp2 = new Regex(@"^[а-яА-Я]+( [а-яА-Я]+)?(\-[а-яА-Я]+)?$");
-			string input = textBox2.Text.Trim();
-			string Country="";
-			if (regexp2.IsMatch(input))
-			{
-				label2.BackColor = Color.White;
-				if (input.IndexOf("-") != -1)
+			string Country = "";
+			try {
+				Country = Bank.TryConvertToCountry(CountryBox.Text);
+			}
+			catch (ArgumentException){
+				if (CountryBox.Text != "")
 				{
-					Country = input.Substring(0, 1).ToUpper() + input.Substring(1, input.IndexOf("-")).ToLower() +
-						input.Substring(input.IndexOf("-") + 1, 1).ToUpper() + input.Substring(input.IndexOf("-") + 2).ToLower();
-				}
-				else
-				{
-					Country = input.Substring(0, 1).ToUpper() + input.Substring(1).ToLower();
+					CountryLabel.BackColor = Color.Red;
+					isFull = false;
 				}
 			}
-			else if (input != "")
-			{
-				label2.BackColor = Color.Red;
-				isFull = false;
-			}
-
-			string input2 = textBox3.Text.Trim();
 			string City = "";
-			if (regexp2.IsMatch(input2))
+			try
 			{
-				label3.BackColor = Color.White;
-				if (input2.IndexOf("-") != -1)
+				City = Bank.TryConvertToCountry(CityBox.Text);
+			}
+			catch (ArgumentException)
+			{
+				if (CityBox.Text != "")
 				{
-					City = input2.Substring(0, 1).ToUpper() + input2.Substring(1, input2.IndexOf("-")).ToLower() +
-						input2.Substring(input2.IndexOf("-") + 1, 1).ToUpper() + input2.Substring(input2.IndexOf("-") + 2).ToLower();
-				}
-				else if (input2.IndexOf(" ") != -1)
-				{
-					City = input2.Substring(0, 1).ToUpper() + input2.Substring(1, input2.IndexOf(" ")).ToLower() +
-						   input2.Substring(input2.IndexOf(" ") + 1, 1).ToUpper() + input2.Substring(input2.IndexOf(" ") + 2).ToLower();
-				}
-				else {
-					City = input2.Substring(0, 1).ToUpper() + input2.Substring(1).ToLower();
+					CityLabel.BackColor = Color.Red;
+					isFull = false;
 				}
 			}
-			else if (input2!="")
-			{
-				label3.BackColor = Color.Red;
-				isFull = false;
-			}
-
+			
 			if (isFull)
 			{
-				percents = Transform(textBox5.Text);
-				Bank bankToAdd = new Bank(textBox1.Text.Trim(), Country, City, textBox4.Text.Trim(), comboBox1.Text, percents,
-					Convert.ToInt32(numericUpDown1.Value), checkBox1.Checked, checkBox2.Checked, radioButton1.Checked);
+				percents = Transform(Percentbox.Text);
+				Bank bankToAdd = new Bank(Namebox.Text.Trim(), Country, City, StreetBox.Text.Trim(), ControlFormBox.Text, percents,
+					Convert.ToInt32(Termbox.Value), PosToAddbox.Checked, PosToGetbox.Checked, AddingPercrb.Checked);
 				inputBase.Add(bankToAdd);
 				string[] line = bankToAdd.ToString().Split('/');
 				line = Bank.ConvertData(line);
@@ -133,7 +112,7 @@ namespace BankBankBank
 			e.Handled = true;
 		}
 
-		private void Adding_Editing_Load(object sender, EventArgs e)
+		private void Adding_Editing_Load(object sender, EventArgs e)//Загрузка базы при открытии формы
 		{
 			inputBase = Bank.ReadBase("dataBase.txt");
 			for (int i = 0; i < inputBase.Count(); i++)  {
@@ -144,7 +123,7 @@ namespace BankBankBank
 			dataGridView1.ClearSelection();
 		}
 
-		private void button3_Click(object sender, EventArgs e)
+		private void button3_Click(object sender, EventArgs e)//Удаление банка из базы
 		{
 			if (dataGridView1.CurrentRow != null) {
 				inputBase.RemoveAt(dataGridView1.CurrentRow.Index);
@@ -153,7 +132,7 @@ namespace BankBankBank
 			else MessageBox.Show("Для удаления выберите строку с банком");
 		}
 
-		private void Adding_Editing_FormClosed(object sender, FormClosedEventArgs e)
+		private void Adding_Editing_FormClosed(object sender, FormClosedEventArgs e)//Сохранение базы при закрытии формы
 		{
 			StreamWriter output = new StreamWriter("dataBase.txt");
 			for (int i = 0; i < inputBase.Count(); i++)
@@ -163,5 +142,14 @@ namespace BankBankBank
 			output.Close();
 		}
 
+		private void dataGridView1_DoubleClick(object sender, EventArgs e)
+		{
+			MessageBox.Show("asd");
+		}
+
+		private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+		{
+			if (e.RowIndex != -1) MessageBox.Show("side");
+		}
 	}
 }
