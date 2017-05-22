@@ -70,6 +70,7 @@ namespace BankBankBank
 			string Country = "";
 			try {
 				Country = Bank.TryConvertToCountry(CountryBox.Text);
+				CountryLabel.BackColor = Color.White;
 			}
 			catch (ArgumentException){
 				if (CountryBox.Text != "")
@@ -78,10 +79,12 @@ namespace BankBankBank
 					isFull = false;
 				}
 			}
+
 			string City = "";
 			try
 			{
 				City = Bank.TryConvertToCountry(CityBox.Text);
+				CityLabel.BackColor = Color.White;
 			}
 			catch (ArgumentException)
 			{
@@ -142,14 +145,11 @@ namespace BankBankBank
 			output.Close();
 		}
 
-		private void dataGridView1_DoubleClick(object sender, EventArgs e)
-		{
-			MessageBox.Show("asd");
-		}
-
-		private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
-		{
-			if (e.RowIndex != -1) MessageBox.Show("side");
-		}
+		//private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+		//{
+		//	if (e.RowIndex != -1) {
+		//
+		//	}
+		//}
 	}
 }

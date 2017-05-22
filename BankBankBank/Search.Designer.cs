@@ -68,7 +68,7 @@
 			this.MainMenuButton.Location = new System.Drawing.Point(398, 589);
 			this.MainMenuButton.Name = "MainMenuButton";
 			this.MainMenuButton.Size = new System.Drawing.Size(221, 76);
-			this.MainMenuButton.TabIndex = 0;
+			this.MainMenuButton.TabIndex = 7;
 			this.MainMenuButton.Text = "Главное меню";
 			this.MainMenuButton.UseVisualStyleBackColor = true;
 			this.MainMenuButton.Click += new System.EventHandler(this.button1_Click);
@@ -79,7 +79,7 @@
 			this.SearchButton.Location = new System.Drawing.Point(86, 589);
 			this.SearchButton.Name = "SearchButton";
 			this.SearchButton.Size = new System.Drawing.Size(221, 76);
-			this.SearchButton.TabIndex = 1;
+			this.SearchButton.TabIndex = 6;
 			this.SearchButton.Text = "Поиск";
 			this.SearchButton.UseVisualStyleBackColor = true;
 			this.SearchButton.Click += new System.EventHandler(this.button2_Click);
@@ -91,7 +91,7 @@
 			this.SumNumericBox.Location = new System.Drawing.Point(17, 132);
 			this.SumNumericBox.Name = "SumNumericBox";
 			this.SumNumericBox.Size = new System.Drawing.Size(89, 22);
-			this.SumNumericBox.TabIndex = 2;
+			this.SumNumericBox.TabIndex = 1;
 			this.SumNumericBox.Text = "0";
 			this.SumNumericBox.TextChanged += new System.EventHandler(this.numericTextBox1_TextChanged);
 			// 
@@ -103,7 +103,7 @@
 			this.SumTrackBar.Maximum = 10000;
 			this.SumTrackBar.Name = "SumTrackBar";
 			this.SumTrackBar.Size = new System.Drawing.Size(140, 56);
-			this.SumTrackBar.TabIndex = 3;
+			this.SumTrackBar.TabIndex = 0;
 			this.SumTrackBar.TickStyle = System.Windows.Forms.TickStyle.None;
 			this.SumTrackBar.Scroll += new System.EventHandler(this.trackBar1_Scroll);
 			// 
@@ -132,7 +132,7 @@
 			this.ControlFormbox.Location = new System.Drawing.Point(359, 69);
 			this.ControlFormbox.Name = "ControlFormbox";
 			this.ControlFormbox.Size = new System.Drawing.Size(196, 24);
-			this.ControlFormbox.TabIndex = 5;
+			this.ControlFormbox.TabIndex = 3;
 			this.ControlFormbox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.comboBox1_KeyDown);
 			this.ControlFormbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox1_KeyPress);
 			// 
@@ -167,7 +167,7 @@
 			this.CountryBox.Location = new System.Drawing.Point(572, 70);
 			this.CountryBox.Name = "CountryBox";
 			this.CountryBox.Size = new System.Drawing.Size(212, 24);
-			this.CountryBox.TabIndex = 8;
+			this.CountryBox.TabIndex = 4;
 			this.CountryBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.comboBox2_KeyDown);
 			this.CountryBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox2_KeyPress);
 			// 
@@ -193,7 +193,7 @@
             0});
 			this.Termbox.Name = "Termbox";
 			this.Termbox.Size = new System.Drawing.Size(120, 22);
-			this.Termbox.TabIndex = 10;
+			this.Termbox.TabIndex = 2;
 			// 
 			// PosToAddLabel
 			// 
@@ -214,7 +214,7 @@
 			this.PosToAddbox.Location = new System.Drawing.Point(800, 70);
 			this.PosToAddbox.Name = "PosToAddbox";
 			this.PosToAddbox.Size = new System.Drawing.Size(72, 24);
-			this.PosToAddbox.TabIndex = 13;
+			this.PosToAddbox.TabIndex = 5;
 			this.PosToAddbox.Text = "Есть";
 			this.PosToAddbox.UseVisualStyleBackColor = true;
 			// 
@@ -248,6 +248,7 @@
 			this.dataGridView2.RowTemplate.Height = 24;
 			this.dataGridView2.Size = new System.Drawing.Size(1190, 361);
 			this.dataGridView2.TabIndex = 23;
+			this.dataGridView2.TabStop = false;
 			// 
 			// dataGridViewTextBoxColumn1
 			// 
@@ -325,7 +326,7 @@
 			this.ReturnToBaseButton.Location = new System.Drawing.Point(730, 589);
 			this.ReturnToBaseButton.Name = "ReturnToBaseButton";
 			this.ReturnToBaseButton.Size = new System.Drawing.Size(210, 75);
-			this.ReturnToBaseButton.TabIndex = 25;
+			this.ReturnToBaseButton.TabIndex = 8;
 			this.ReturnToBaseButton.Text = "Вернуться к базе банков";
 			this.ReturnToBaseButton.UseVisualStyleBackColor = true;
 			this.ReturnToBaseButton.Click += new System.EventHandler(this.button3_Click);

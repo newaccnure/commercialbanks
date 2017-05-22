@@ -49,13 +49,6 @@
 			this.Termbox = new System.Windows.Forms.NumericUpDown();
 			this.TermLabel = new System.Windows.Forms.Label();
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
-			this.Deletebutton = new System.Windows.Forms.Button();
-			this.PosToGetLabel = new System.Windows.Forms.Label();
-			this.PosToGetbox = new System.Windows.Forms.CheckBox();
-			this.AddingPercLabel = new System.Windows.Forms.Label();
-			this.AddingPercrb = new System.Windows.Forms.RadioButton();
-			this.radioButton2 = new System.Windows.Forms.RadioButton();
-			this.Percentbox = new BankBankBank.NumericTextBox();
 			this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,6 +59,13 @@
 			this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Deletebutton = new System.Windows.Forms.Button();
+			this.PosToGetLabel = new System.Windows.Forms.Label();
+			this.PosToGetbox = new System.Windows.Forms.CheckBox();
+			this.AddingPercLabel = new System.Windows.Forms.Label();
+			this.AddingPercrb = new System.Windows.Forms.RadioButton();
+			this.radioButton2 = new System.Windows.Forms.RadioButton();
+			this.Percentbox = new BankBankBank.NumericTextBox();
 			((System.ComponentModel.ISupportInitialize)(this.Termbox)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			this.SuspendLayout();
@@ -76,7 +76,7 @@
 			this.MainMenubutton.Location = new System.Drawing.Point(884, 614);
 			this.MainMenubutton.Name = "MainMenubutton";
 			this.MainMenubutton.Size = new System.Drawing.Size(221, 76);
-			this.MainMenubutton.TabIndex = 1;
+			this.MainMenubutton.TabIndex = 13;
 			this.MainMenubutton.Text = "Главное меню";
 			this.MainMenubutton.UseVisualStyleBackColor = true;
 			this.MainMenubutton.Click += new System.EventHandler(this.button1_Click);
@@ -87,7 +87,7 @@
 			this.Addingbutton.Location = new System.Drawing.Point(130, 614);
 			this.Addingbutton.Name = "Addingbutton";
 			this.Addingbutton.Size = new System.Drawing.Size(221, 76);
-			this.Addingbutton.TabIndex = 2;
+			this.Addingbutton.TabIndex = 11;
 			this.Addingbutton.Text = "Добавить новый банк";
 			this.Addingbutton.UseVisualStyleBackColor = true;
 			this.Addingbutton.Click += new System.EventHandler(this.button2_Click);
@@ -97,7 +97,7 @@
 			this.Namebox.Location = new System.Drawing.Point(28, 64);
 			this.Namebox.Name = "Namebox";
 			this.Namebox.Size = new System.Drawing.Size(134, 22);
-			this.Namebox.TabIndex = 3;
+			this.Namebox.TabIndex = 0;
 			// 
 			// Namelabel
 			// 
@@ -114,7 +114,7 @@
 			this.CountryBox.Location = new System.Drawing.Point(181, 64);
 			this.CountryBox.Name = "CountryBox";
 			this.CountryBox.Size = new System.Drawing.Size(137, 22);
-			this.CountryBox.TabIndex = 5;
+			this.CountryBox.TabIndex = 1;
 			// 
 			// CountryLabel
 			// 
@@ -141,14 +141,14 @@
 			this.CityBox.Location = new System.Drawing.Point(342, 64);
 			this.CityBox.Name = "CityBox";
 			this.CityBox.Size = new System.Drawing.Size(137, 22);
-			this.CityBox.TabIndex = 8;
+			this.CityBox.TabIndex = 2;
 			// 
 			// StreetBox
 			// 
 			this.StreetBox.Location = new System.Drawing.Point(504, 64);
 			this.StreetBox.Name = "StreetBox";
 			this.StreetBox.Size = new System.Drawing.Size(137, 22);
-			this.StreetBox.TabIndex = 9;
+			this.StreetBox.TabIndex = 3;
 			// 
 			// StreetLabel
 			// 
@@ -173,7 +173,7 @@
 			this.ControlFormBox.Location = new System.Drawing.Point(671, 64);
 			this.ControlFormBox.Name = "ControlFormBox";
 			this.ControlFormBox.Size = new System.Drawing.Size(182, 24);
-			this.ControlFormBox.TabIndex = 11;
+			this.ControlFormBox.TabIndex = 4;
 			this.ControlFormBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox1_KeyPress);
 			// 
 			// ControlFormLabel
@@ -203,7 +203,7 @@
 			this.PosToAddbox.Location = new System.Drawing.Point(884, 64);
 			this.PosToAddbox.Name = "PosToAddbox";
 			this.PosToAddbox.Size = new System.Drawing.Size(72, 24);
-			this.PosToAddbox.TabIndex = 17;
+			this.PosToAddbox.TabIndex = 5;
 			this.PosToAddbox.Text = "Есть";
 			this.PosToAddbox.UseVisualStyleBackColor = true;
 			// 
@@ -222,7 +222,7 @@
 			this.Termbox.Location = new System.Drawing.Point(198, 170);
 			this.Termbox.Name = "Termbox";
 			this.Termbox.Size = new System.Drawing.Size(120, 22);
-			this.Termbox.TabIndex = 19;
+			this.Termbox.TabIndex = 7;
 			// 
 			// TermLabel
 			// 
@@ -264,82 +264,7 @@
 			this.dataGridView1.RowTemplate.Height = 24;
 			this.dataGridView1.Size = new System.Drawing.Size(1185, 361);
 			this.dataGridView1.TabIndex = 21;
-			this.dataGridView1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentDoubleClick);
-			// 
-			// Deletebutton
-			// 
-			this.Deletebutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.Deletebutton.Location = new System.Drawing.Point(494, 614);
-			this.Deletebutton.Name = "Deletebutton";
-			this.Deletebutton.Size = new System.Drawing.Size(252, 76);
-			this.Deletebutton.TabIndex = 22;
-			this.Deletebutton.Text = "Удалить выбранный банк";
-			this.Deletebutton.UseVisualStyleBackColor = true;
-			this.Deletebutton.Click += new System.EventHandler(this.button3_Click);
-			// 
-			// PosToGetLabel
-			// 
-			this.PosToGetLabel.AutoSize = true;
-			this.PosToGetLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.PosToGetLabel.Location = new System.Drawing.Point(338, 111);
-			this.PosToGetLabel.Name = "PosToGetLabel";
-			this.PosToGetLabel.Size = new System.Drawing.Size(170, 40);
-			this.PosToGetLabel.TabIndex = 23;
-			this.PosToGetLabel.Text = "Возможность \r\nчастичного снятия";
-			// 
-			// PosToGetbox
-			// 
-			this.PosToGetbox.AutoSize = true;
-			this.PosToGetbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.PosToGetbox.Location = new System.Drawing.Point(342, 168);
-			this.PosToGetbox.Name = "PosToGetbox";
-			this.PosToGetbox.Size = new System.Drawing.Size(72, 24);
-			this.PosToGetbox.TabIndex = 24;
-			this.PosToGetbox.Text = "Есть";
-			this.PosToGetbox.UseVisualStyleBackColor = true;
-			// 
-			// AddingPercLabel
-			// 
-			this.AddingPercLabel.AutoSize = true;
-			this.AddingPercLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.AddingPercLabel.Location = new System.Drawing.Point(540, 111);
-			this.AddingPercLabel.Name = "AddingPercLabel";
-			this.AddingPercLabel.Size = new System.Drawing.Size(206, 20);
-			this.AddingPercLabel.TabIndex = 25;
-			this.AddingPercLabel.Text = "Начисление процентов";
-			// 
-			// AddingPercrb
-			// 
-			this.AddingPercrb.AutoSize = true;
-			this.AddingPercrb.Checked = true;
-			this.AddingPercrb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.AddingPercrb.Location = new System.Drawing.Point(544, 143);
-			this.AddingPercrb.Name = "AddingPercrb";
-			this.AddingPercrb.Size = new System.Drawing.Size(170, 24);
-			this.AddingPercrb.TabIndex = 26;
-			this.AddingPercrb.TabStop = true;
-			this.AddingPercrb.Text = "на текущий счет";
-			this.AddingPercrb.UseVisualStyleBackColor = true;
-			// 
-			// radioButton2
-			// 
-			this.radioButton2.AutoSize = true;
-			this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.radioButton2.Location = new System.Drawing.Point(544, 171);
-			this.radioButton2.Name = "radioButton2";
-			this.radioButton2.Size = new System.Drawing.Size(102, 24);
-			this.radioButton2.TabIndex = 27;
-			this.radioButton2.Text = "на карту";
-			this.radioButton2.UseVisualStyleBackColor = true;
-			// 
-			// Percentbox
-			// 
-			this.Percentbox.AllowSpace = false;
-			this.Percentbox.Location = new System.Drawing.Point(32, 168);
-			this.Percentbox.Name = "Percentbox";
-			this.Percentbox.Size = new System.Drawing.Size(130, 22);
-			this.Percentbox.TabIndex = 28;
-			this.Percentbox.Text = "0";
+			this.dataGridView1.TabStop = false;
 			// 
 			// Column1
 			// 
@@ -402,6 +327,81 @@
 			this.Column10.HeaderText = "Начисление процентов";
 			this.Column10.Name = "Column10";
 			this.Column10.ReadOnly = true;
+			// 
+			// Deletebutton
+			// 
+			this.Deletebutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.Deletebutton.Location = new System.Drawing.Point(494, 614);
+			this.Deletebutton.Name = "Deletebutton";
+			this.Deletebutton.Size = new System.Drawing.Size(252, 76);
+			this.Deletebutton.TabIndex = 12;
+			this.Deletebutton.Text = "Удалить выбранный банк";
+			this.Deletebutton.UseVisualStyleBackColor = true;
+			this.Deletebutton.Click += new System.EventHandler(this.button3_Click);
+			// 
+			// PosToGetLabel
+			// 
+			this.PosToGetLabel.AutoSize = true;
+			this.PosToGetLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.PosToGetLabel.Location = new System.Drawing.Point(338, 111);
+			this.PosToGetLabel.Name = "PosToGetLabel";
+			this.PosToGetLabel.Size = new System.Drawing.Size(170, 40);
+			this.PosToGetLabel.TabIndex = 23;
+			this.PosToGetLabel.Text = "Возможность \r\nчастичного снятия";
+			// 
+			// PosToGetbox
+			// 
+			this.PosToGetbox.AutoSize = true;
+			this.PosToGetbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.PosToGetbox.Location = new System.Drawing.Point(342, 168);
+			this.PosToGetbox.Name = "PosToGetbox";
+			this.PosToGetbox.Size = new System.Drawing.Size(72, 24);
+			this.PosToGetbox.TabIndex = 8;
+			this.PosToGetbox.Text = "Есть";
+			this.PosToGetbox.UseVisualStyleBackColor = true;
+			// 
+			// AddingPercLabel
+			// 
+			this.AddingPercLabel.AutoSize = true;
+			this.AddingPercLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.AddingPercLabel.Location = new System.Drawing.Point(540, 111);
+			this.AddingPercLabel.Name = "AddingPercLabel";
+			this.AddingPercLabel.Size = new System.Drawing.Size(206, 20);
+			this.AddingPercLabel.TabIndex = 25;
+			this.AddingPercLabel.Text = "Начисление процентов";
+			// 
+			// AddingPercrb
+			// 
+			this.AddingPercrb.AutoSize = true;
+			this.AddingPercrb.Checked = true;
+			this.AddingPercrb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.AddingPercrb.Location = new System.Drawing.Point(544, 143);
+			this.AddingPercrb.Name = "AddingPercrb";
+			this.AddingPercrb.Size = new System.Drawing.Size(170, 24);
+			this.AddingPercrb.TabIndex = 9;
+			this.AddingPercrb.TabStop = true;
+			this.AddingPercrb.Text = "на текущий счет";
+			this.AddingPercrb.UseVisualStyleBackColor = true;
+			// 
+			// radioButton2
+			// 
+			this.radioButton2.AutoSize = true;
+			this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.radioButton2.Location = new System.Drawing.Point(544, 171);
+			this.radioButton2.Name = "radioButton2";
+			this.radioButton2.Size = new System.Drawing.Size(102, 24);
+			this.radioButton2.TabIndex = 10;
+			this.radioButton2.Text = "на карту";
+			this.radioButton2.UseVisualStyleBackColor = true;
+			// 
+			// Percentbox
+			// 
+			this.Percentbox.AllowSpace = false;
+			this.Percentbox.Location = new System.Drawing.Point(32, 168);
+			this.Percentbox.Name = "Percentbox";
+			this.Percentbox.Size = new System.Drawing.Size(130, 22);
+			this.Percentbox.TabIndex = 6;
+			this.Percentbox.Text = "0";
 			// 
 			// Adding_Editing
 			// 
