@@ -28,11 +28,13 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenu));
 			this.label1 = new System.Windows.Forms.Label();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.button1 = new System.Windows.Forms.Button();
 			this.button2 = new System.Windows.Forms.Button();
+			this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -54,26 +56,31 @@
 			this.pictureBox1.Size = new System.Drawing.Size(507, 362);
 			this.pictureBox1.TabIndex = 1;
 			this.pictureBox1.TabStop = false;
+			this.toolTip1.SetToolTip(this.pictureBox1, "Нажмите, чтобы получить информацию об этом приложении");
+			this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
 			// 
 			// button1
 			// 
 			this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.button1.Location = new System.Drawing.Point(557, 254);
+			this.button1.Location = new System.Drawing.Point(557, 243);
 			this.button1.Name = "button1";
 			this.button1.Size = new System.Drawing.Size(221, 76);
 			this.button1.TabIndex = 0;
 			this.button1.Text = "Перейти к поиску банка";
+			this.toolTip1.SetToolTip(this.button1, "Хотите посмотреть какой из банков вам больше всего?\r\nТогда вам стоит нажать на эт" +
+        "у кнопку)");
 			this.button1.UseVisualStyleBackColor = true;
 			this.button1.Click += new System.EventHandler(this.button1_Click);
 			// 
 			// button2
 			// 
 			this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.button2.Location = new System.Drawing.Point(557, 385);
+			this.button2.Location = new System.Drawing.Point(557, 382);
 			this.button2.Name = "button2";
 			this.button2.Size = new System.Drawing.Size(221, 113);
 			this.button2.TabIndex = 1;
 			this.button2.Text = "Добавление/\r\nудаление банка";
+			this.toolTip1.SetToolTip(this.button2, "Если хотите изменить свой список банков, \r\nтогда вам сюда)");
 			this.button2.UseVisualStyleBackColor = true;
 			this.button2.Click += new System.EventHandler(this.button2_Click_1);
 			// 
@@ -104,6 +111,7 @@
 		private System.Windows.Forms.PictureBox pictureBox1;
 		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.Button button2;
+		private System.Windows.Forms.ToolTip toolTip1;
 	}
 }
 

@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.components = new System.ComponentModel.Container();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Adding_Editing));
@@ -35,11 +36,8 @@
 			this.Addingbutton = new System.Windows.Forms.Button();
 			this.Namebox = new System.Windows.Forms.TextBox();
 			this.Namelabel = new System.Windows.Forms.Label();
-			this.CountryBox = new System.Windows.Forms.TextBox();
 			this.CountryLabel = new System.Windows.Forms.Label();
 			this.CityLabel = new System.Windows.Forms.Label();
-			this.CityBox = new System.Windows.Forms.TextBox();
-			this.StreetBox = new System.Windows.Forms.TextBox();
 			this.StreetLabel = new System.Windows.Forms.Label();
 			this.ControlFormBox = new System.Windows.Forms.ComboBox();
 			this.ControlFormLabel = new System.Windows.Forms.Label();
@@ -66,6 +64,10 @@
 			this.AddingPercrb = new System.Windows.Forms.RadioButton();
 			this.radioButton2 = new System.Windows.Forms.RadioButton();
 			this.Percentbox = new BankBankBank.NumericTextBox();
+			this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+			this.CountryBox = new BankBankBank.MyTextBox();
+			this.CityBox = new BankBankBank.MyTextBox();
+			this.StreetBox = new BankBankBank.MyTextBox();
 			((System.ComponentModel.ISupportInitialize)(this.Termbox)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			this.SuspendLayout();
@@ -89,6 +91,7 @@
 			this.Addingbutton.Size = new System.Drawing.Size(221, 76);
 			this.Addingbutton.TabIndex = 11;
 			this.Addingbutton.Text = "Добавить новый банк";
+			this.toolTip1.SetToolTip(this.Addingbutton, "Заполните поля с информацией\r\nдля добавления банка в список банков.");
 			this.Addingbutton.UseVisualStyleBackColor = true;
 			this.Addingbutton.Click += new System.EventHandler(this.button2_Click);
 			// 
@@ -109,13 +112,6 @@
 			this.Namelabel.TabIndex = 4;
 			this.Namelabel.Text = "*Наименование";
 			// 
-			// CountryBox
-			// 
-			this.CountryBox.Location = new System.Drawing.Point(181, 64);
-			this.CountryBox.Name = "CountryBox";
-			this.CountryBox.Size = new System.Drawing.Size(137, 22);
-			this.CountryBox.TabIndex = 1;
-			// 
 			// CountryLabel
 			// 
 			this.CountryLabel.AutoSize = true;
@@ -135,20 +131,6 @@
 			this.CityLabel.Size = new System.Drawing.Size(61, 20);
 			this.CityLabel.TabIndex = 7;
 			this.CityLabel.Text = "Город";
-			// 
-			// CityBox
-			// 
-			this.CityBox.Location = new System.Drawing.Point(342, 64);
-			this.CityBox.Name = "CityBox";
-			this.CityBox.Size = new System.Drawing.Size(137, 22);
-			this.CityBox.TabIndex = 2;
-			// 
-			// StreetBox
-			// 
-			this.StreetBox.Location = new System.Drawing.Point(504, 64);
-			this.StreetBox.Name = "StreetBox";
-			this.StreetBox.Size = new System.Drawing.Size(137, 22);
-			this.StreetBox.TabIndex = 3;
 			// 
 			// StreetLabel
 			// 
@@ -261,6 +243,7 @@
 			this.dataGridView1.Location = new System.Drawing.Point(28, 210);
 			this.dataGridView1.Name = "dataGridView1";
 			this.dataGridView1.ReadOnly = true;
+			this.dataGridView1.RowHeadersVisible = false;
 			this.dataGridView1.RowTemplate.Height = 24;
 			this.dataGridView1.Size = new System.Drawing.Size(1185, 361);
 			this.dataGridView1.TabIndex = 21;
@@ -336,6 +319,7 @@
 			this.Deletebutton.Size = new System.Drawing.Size(252, 76);
 			this.Deletebutton.TabIndex = 12;
 			this.Deletebutton.Text = "Удалить выбранный банк";
+			this.toolTip1.SetToolTip(this.Deletebutton, "Для удаления выберите одну из ячеек\r\nбанка, который хотите удалить.\r\n");
 			this.Deletebutton.UseVisualStyleBackColor = true;
 			this.Deletebutton.Click += new System.EventHandler(this.button3_Click);
 			// 
@@ -403,12 +387,42 @@
 			this.Percentbox.TabIndex = 6;
 			this.Percentbox.Text = "0";
 			// 
+			// CountryBox
+			// 
+			this.CountryBox.AllowSpace = false;
+			this.CountryBox.Location = new System.Drawing.Point(198, 65);
+			this.CountryBox.Name = "CountryBox";
+			this.CountryBox.Size = new System.Drawing.Size(120, 22);
+			this.CountryBox.TabIndex = 1;
+			this.CountryBox.Text = "Неизвестно";
+			// 
+			// CityBox
+			// 
+			this.CityBox.AllowSpace = false;
+			this.CityBox.Location = new System.Drawing.Point(342, 64);
+			this.CityBox.Name = "CityBox";
+			this.CityBox.Size = new System.Drawing.Size(138, 22);
+			this.CityBox.TabIndex = 2;
+			this.CityBox.Text = "Неизвестно";
+			// 
+			// StreetBox
+			// 
+			this.StreetBox.AllowSpace = false;
+			this.StreetBox.Location = new System.Drawing.Point(518, 64);
+			this.StreetBox.Name = "StreetBox";
+			this.StreetBox.Size = new System.Drawing.Size(106, 22);
+			this.StreetBox.TabIndex = 3;
+			this.StreetBox.Text = "Неизвестно";
+			// 
 			// Adding_Editing
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.SystemColors.Window;
 			this.ClientSize = new System.Drawing.Size(1240, 729);
+			this.Controls.Add(this.StreetBox);
+			this.Controls.Add(this.CityBox);
+			this.Controls.Add(this.CountryBox);
 			this.Controls.Add(this.Percentbox);
 			this.Controls.Add(this.radioButton2);
 			this.Controls.Add(this.AddingPercrb);
@@ -425,11 +439,8 @@
 			this.Controls.Add(this.ControlFormLabel);
 			this.Controls.Add(this.ControlFormBox);
 			this.Controls.Add(this.StreetLabel);
-			this.Controls.Add(this.StreetBox);
-			this.Controls.Add(this.CityBox);
 			this.Controls.Add(this.CityLabel);
 			this.Controls.Add(this.CountryLabel);
-			this.Controls.Add(this.CountryBox);
 			this.Controls.Add(this.Namelabel);
 			this.Controls.Add(this.Namebox);
 			this.Controls.Add(this.Addingbutton);
@@ -454,11 +465,8 @@
 		private System.Windows.Forms.Button Addingbutton;
 		private System.Windows.Forms.TextBox Namebox;
 		private System.Windows.Forms.Label Namelabel;
-		private System.Windows.Forms.TextBox CountryBox;
 		private System.Windows.Forms.Label CountryLabel;
 		private System.Windows.Forms.Label CityLabel;
-		private System.Windows.Forms.TextBox CityBox;
-		private System.Windows.Forms.TextBox StreetBox;
 		private System.Windows.Forms.Label StreetLabel;
 		private System.Windows.Forms.ComboBox ControlFormBox;
 		private System.Windows.Forms.Label ControlFormLabel;
@@ -485,5 +493,9 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
+		private System.Windows.Forms.ToolTip toolTip1;
+		private MyTextBox CountryBox;
+		private MyTextBox CityBox;
+		private MyTextBox StreetBox;
 	}
 }

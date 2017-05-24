@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using System.Text.RegularExpressions;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace BankBankBank
 {
@@ -15,6 +18,7 @@ namespace BankBankBank
 		public MainMenu()
 		{
 			InitializeComponent();
+			MyTextBox m = new MyTextBox();
 		}
 		private void button1_Click(object sender, EventArgs e)
 		{
@@ -30,6 +34,11 @@ namespace BankBankBank
 			Hide();
 			add_ed.ShowDialog();
 			Dispose();
+		}
+
+		private void pictureBox1_Click(object sender, EventArgs e)
+		{
+			MessageBox.Show("Наше приложение лучшее в мире.\nЭто достаточно, чтобы им пользоваться");
 		}
 	}
 }

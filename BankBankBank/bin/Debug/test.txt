@@ -1,1 +1,33 @@
+АТБ банк/Франция/Париж/Неизвестно/Муниципальная/16,5/6/True/True/True
+Новый Банк/Англия/Лондон/ул. Бейкер стрит/Кооперативная/16,5/12/True/True/False
+Ощадбанк/Украина/Киев/ул. Шевченко, 15/Акционерная/16/8/False/True/True
 Форвард Банк/Украина/Харьков/пр. Московский,15/Государственная/18,5/9/False/True/False
+International Bank/Неизвестно/Неизвестно/Неизвестно/Межгосударственная/14/12/False/True/True
+Economical Bank/Египет/Каир/Неизвестно/Государственная/15/6/True/False/True
+Мегабанк/Россия/Санкт-Петербург/ул. Пушкина, 125/Акционерная/19/7/True/False/False
+Экспресс-Банк/Азербайджан/Неизвестно/Неизвестно/Государственная/15/9/True/False/True
+Bank of China/Китай/Пекин/Неизвестно/Государственная/15/12/True/True/False
+Bank of America/Соединенные Штаты Америки/Неизвестно/Неизвестно/Государственная/15,8/8/False/True/True
+Barclays/Англия/Лондон/Неизвестно/Акционерная/15,5/8/True/False/False
+Goldman Sachs/Соединенные Штаты Америки/Нью-Йорк/Неизвестно/Акционерная/15,7/9/True/True/True
+Unicredit Bank/Украина/Неизвестно/Неизвестно/Муниципальная/16/6/True/False/True
+ПУМБ/Украина/Неизвестно/Неизвестно/Акционерная/14,5/12/False/True/True
+Укргазбанк/Украина/Неизвестно/Неизвестно/Государственная/15/12/True/True/True
+List<Bank> result = new List<Bank>();
+			if (File.Exists("test.txt"))
+			{
+				using (StreamReader fileInput = new StreamReader("test.txt"))
+				{
+					string[] lines = File.ReadAllLines("test.txt");
+					for (int i = 0; i < lines.Length; i++)
+					{
+						string[] input = lines[i].Split('/');
+						result.Add(new Bank(input[0], input[1], input[2], input[3], input[4], Convert.ToDouble(input[5]),
+							Convert.ToInt32(input[6]), Convert.ToBoolean(input[7]), Convert.ToBoolean(input[8]), Convert.ToBoolean(input[9])));
+					}
+				}
+			}
+			using (FileStream fileInput = new FileStream("dataBase.txt", FileMode.Open)) {
+				var ser = new BinaryFormatter();
+				ser.Serialize(fileInput,result);
+			}

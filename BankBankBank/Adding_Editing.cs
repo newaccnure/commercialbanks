@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Text.RegularExpressions;
+using System.Runtime.Serialization.Formatters.Binary;
 namespace BankBankBank
 {
 	public partial class Adding_Editing : Form
@@ -17,6 +18,7 @@ namespace BankBankBank
 		public Adding_Editing()
 		{
 			InitializeComponent();
+			ControlFormBox.SelectedItem = "Неизвестно";
 		}
 		public static double Transform(string input)//Преобразование строки в тип double
 		{
@@ -31,11 +33,14 @@ namespace BankBankBank
 
 		private void button1_Click(object sender, EventArgs e)//Сохранение базы данных и переход в главное меню 
 		{
-			StreamWriter output = new StreamWriter("dataBase.txt");
-			for (int i = 0; i < inputBase.Count(); i++) {
-				output.WriteLine(inputBase[i]);
+			if (File.Exists("dataBase.txt"))
+			{
+				using (FileStream output = new FileStream("dataBase.txt", FileMode.Open))
+				{
+					var serializor = new BinaryFormatter();
+					serializor.Serialize(output, inputBase);
+				}
 			}
-			output.Close();
 			MainMenu main_menu = new MainMenu();
 			Hide();
 			main_menu.ShowDialog();
@@ -118,7 +123,8 @@ namespace BankBankBank
 		private void Adding_Editing_Load(object sender, EventArgs e)//Загрузка базы при открытии формы
 		{
 			inputBase = Bank.ReadBase("dataBase.txt");
-			for (int i = 0; i < inputBase.Count(); i++)  {
+			for (int i = 0; i < inputBase.Count(); i++)
+			{
 				string[] line = inputBase[i].ToString().Split('/');
 				line = Bank.ConvertData(line);
 				dataGridView1.Rows.Add(line);
@@ -128,7 +134,7 @@ namespace BankBankBank
 
 		private void button3_Click(object sender, EventArgs e)//Удаление банка из базы
 		{
-			if (dataGridView1.CurrentRow != null) {
+			if (dataGridView1.CurrentRow.Index != 0) {
 				inputBase.RemoveAt(dataGridView1.CurrentRow.Index);
 				dataGridView1.Rows.RemoveAt(dataGridView1.CurrentRow.Index);
 			}
@@ -137,12 +143,14 @@ namespace BankBankBank
 
 		private void Adding_Editing_FormClosed(object sender, FormClosedEventArgs e)//Сохранение базы при закрытии формы
 		{
-			StreamWriter output = new StreamWriter("dataBase.txt");
-			for (int i = 0; i < inputBase.Count(); i++)
+			if (File.Exists("dataBase.txt"))
 			{
-				output.WriteLine(inputBase[i]);
+				using (FileStream output = new FileStream("dataBase.txt", FileMode.Open))
+				{
+					var serializor = new BinaryFormatter();
+					serializor.Serialize(output,inputBase);
+				}
 			}
-			output.Close();
 		}
 
 		//private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)

@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Text.RegularExpressions;
+using System.Runtime.Serialization.Formatters.Binary;
 namespace BankBankBank
 {
 	static class Program
@@ -32,9 +33,9 @@ namespace BankBankBank
 			{
 				e.Handled = true;
 			}
-			else if (Text.Length > 4)
+			else if (Text.Length > 5 && e.KeyChar!='\b')
 			{
-				Text = "0";
+				Text = "1000000";
 				e.Handled = true;
 			}
 		}
@@ -73,7 +74,52 @@ namespace BankBankBank
 			}
 		}
 	}
+	public class MyTextBox : TextBox {
+		bool allowSpace = false;
+		protected override void OnEnter(EventArgs e)
+		{
+			base.OnEnter(e);
+			if (Text == "Неизвестно")
+			{
+				Text = "";
+			}
+		}
+		protected override void OnLeave(EventArgs e)
+		{
+			base.OnLeave(e);
+			if (Text == "")
+			{
+				Text = "Неизвестно";
+			}
+		}
+		public int IntValue
+		{
+			get
+			{
+				return Int32.Parse(this.Text);
+			}
+		}
+		public decimal DecimalValue
+		{
+			get
+			{
+				return Decimal.Parse(this.Text);
+			}
+		}
+		public bool AllowSpace
+		{
+			set
+			{
+				this.allowSpace = value;
+			}
 
+			get
+			{
+				return this.allowSpace;
+			}
+		}
+	}
+	[Serializable]
 	public class Bank
 	{
 		public string Name;
@@ -104,22 +150,19 @@ namespace BankBankBank
 
 		public static List<Bank> ReadBase(string path)
 		{
+
 			List<Bank> result = new List<Bank>();
-			string[] line = File.ReadAllLines(path);
-			for (int i = 0; i < line.Length; i++)
+			if (File.Exists(path))
 			{
-				string[] input = line[i].Split('/');
-				result.Add( new Bank(input[0], input[1], input[2], input[3], input[4], Convert.ToDouble(input[5]),
-					Convert.ToInt32(input[6]), Convert.ToBoolean(input[7]),Convert.ToBoolean(input[8]), Convert.ToBoolean(input[9])));
+				using (FileStream fileInput = new FileStream(path,FileMode.Open))
+				{
+					var serializor = new BinaryFormatter();
+					result = (List<Bank>)serializor.Deserialize(fileInput);
+				}
 			}
 			return result;
 		}
 
-		public static void AddBank(Bank bankToAdd) {
-			StreamWriter output = File.AppendText("dataBase.txt");
-			output.WriteLine(bankToAdd);
-			output.Close();
-		}
 
 		public override string ToString()
 		{

@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.components = new System.ComponentModel.Container();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Search));
@@ -57,6 +58,7 @@
 			this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.label6 = new System.Windows.Forms.Label();
 			this.ReturnToBaseButton = new System.Windows.Forms.Button();
+			this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
 			((System.ComponentModel.ISupportInitialize)(this.SumTrackBar)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.Termbox)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -65,10 +67,10 @@
 			// MainMenuButton
 			// 
 			this.MainMenuButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.MainMenuButton.Location = new System.Drawing.Point(398, 589);
+			this.MainMenuButton.Location = new System.Drawing.Point(820, 589);
 			this.MainMenuButton.Name = "MainMenuButton";
 			this.MainMenuButton.Size = new System.Drawing.Size(221, 76);
-			this.MainMenuButton.TabIndex = 7;
+			this.MainMenuButton.TabIndex = 9;
 			this.MainMenuButton.Text = "Главное меню";
 			this.MainMenuButton.UseVisualStyleBackColor = true;
 			this.MainMenuButton.Click += new System.EventHandler(this.button1_Click);
@@ -76,11 +78,12 @@
 			// SearchButton
 			// 
 			this.SearchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.SearchButton.Location = new System.Drawing.Point(86, 589);
+			this.SearchButton.Location = new System.Drawing.Point(175, 588);
 			this.SearchButton.Name = "SearchButton";
 			this.SearchButton.Size = new System.Drawing.Size(221, 76);
 			this.SearchButton.TabIndex = 6;
 			this.SearchButton.Text = "Поиск";
+			this.toolTip1.SetToolTip(this.SearchButton, "Введите срок, сумму и выберите критерии, \r\nпо которым будет происходить поиск.\r\n");
 			this.SearchButton.UseVisualStyleBackColor = true;
 			this.SearchButton.Click += new System.EventHandler(this.button2_Click);
 			// 
@@ -245,6 +248,7 @@
 			this.dataGridView2.Location = new System.Drawing.Point(17, 181);
 			this.dataGridView2.Name = "dataGridView2";
 			this.dataGridView2.ReadOnly = true;
+			this.dataGridView2.RowHeadersVisible = false;
 			this.dataGridView2.RowTemplate.Height = 24;
 			this.dataGridView2.Size = new System.Drawing.Size(1190, 361);
 			this.dataGridView2.TabIndex = 23;
@@ -323,11 +327,12 @@
 			// ReturnToBaseButton
 			// 
 			this.ReturnToBaseButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.ReturnToBaseButton.Location = new System.Drawing.Point(730, 589);
+			this.ReturnToBaseButton.Location = new System.Drawing.Point(502, 589);
 			this.ReturnToBaseButton.Name = "ReturnToBaseButton";
 			this.ReturnToBaseButton.Size = new System.Drawing.Size(210, 75);
 			this.ReturnToBaseButton.TabIndex = 8;
 			this.ReturnToBaseButton.Text = "Вернуться к базе банков";
+			this.toolTip1.SetToolTip(this.ReturnToBaseButton, "Нажмите, чтобы перейти \r\nк изначальному списку банков");
 			this.ReturnToBaseButton.UseVisualStyleBackColor = true;
 			this.ReturnToBaseButton.Click += new System.EventHandler(this.button3_Click);
 			// 
@@ -395,5 +400,6 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
 		private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.Button ReturnToBaseButton;
+		private System.Windows.Forms.ToolTip toolTip1;
 	}
 }
