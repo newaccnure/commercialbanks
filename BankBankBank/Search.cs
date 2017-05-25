@@ -81,7 +81,7 @@ namespace BankBankBank
 					{
 						int profit = Convert.ToInt32((maximalProfit - 1) * Convert.ToDouble(SumNumericBox.Text));
 						dataGridView2.Rows.Clear();
-						string[] line = result.ToString().Split('/');
+						string[] line = result.ToString().Split('#');
 						line = Bank.ConvertData(line);
 						dataGridView2.Rows.Add(line);
 						label6.Visible = true;
@@ -99,7 +99,7 @@ namespace BankBankBank
 			inputBase = Bank.ReadBase("dataBase.txt");
 			for (int i = 0; i < inputBase.Count(); i++)
 			{
-				string[] line = inputBase[i].ToString().Split('/');
+				string[] line = inputBase[i].ToString().Split('#');
 				line = Bank.ConvertData(line);
 				dataGridView2.Rows.Add(line);
 			}
@@ -146,7 +146,7 @@ namespace BankBankBank
 			dataGridView2.Rows.Clear();
 			for (int i = 0; i < inputBase.Count(); i++)
 			{
-				string[] line = inputBase[i].ToString().Split('/');
+				string[] line = inputBase[i].ToString().Split('#');
 				line = Bank.ConvertData(line);
 				dataGridView2.Rows.Add(line);
 				label6.Visible = false;

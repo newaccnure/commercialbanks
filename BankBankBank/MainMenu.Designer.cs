@@ -96,6 +96,9 @@
 			this.Controls.Add(this.label1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+			this.MaximizeBox = false;
+			this.MaximumSize = new System.Drawing.Size(899, 600);
+			this.MinimumSize = new System.Drawing.Size(899, 600);
 			this.Name = "MainMenu";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Главное меню";

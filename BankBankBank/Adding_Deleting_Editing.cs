@@ -12,10 +12,10 @@ using System.Text.RegularExpressions;
 using System.Runtime.Serialization.Formatters.Binary;
 namespace BankBankBank
 {
-	public partial class Adding_Editing : Form
+	public partial class Adding_Deleting_Editing : Form
 	{
 		private List<Bank> inputBase;
-		public Adding_Editing()
+		public Adding_Deleting_Editing()
 		{
 			InitializeComponent();
 			ControlFormBox.SelectedItem = "Неизвестно";
@@ -106,7 +106,7 @@ namespace BankBankBank
 				Bank bankToAdd = new Bank(Namebox.Text.Trim(), Country, City, StreetBox.Text.Trim(), ControlFormBox.Text, percents,
 					Convert.ToInt32(Termbox.Value), PosToAddbox.Checked, PosToGetbox.Checked, AddingPercrb.Checked);
 				inputBase.Add(bankToAdd);
-				string[] line = bankToAdd.ToString().Split('/');
+				string[] line = bankToAdd.ToString().Split('#');
 				line = Bank.ConvertData(line);
 				dataGridView1.Rows.Add(line);
 			}
@@ -125,7 +125,7 @@ namespace BankBankBank
 			inputBase = Bank.ReadBase("dataBase.txt");
 			for (int i = 0; i < inputBase.Count(); i++)
 			{
-				string[] line = inputBase[i].ToString().Split('/');
+				string[] line = inputBase[i].ToString().Split('#');
 				line = Bank.ConvertData(line);
 				dataGridView1.Rows.Add(line);
 			}
@@ -152,12 +152,14 @@ namespace BankBankBank
 				}
 			}
 		}
-
-		//private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
-		//{
-		//	if (e.RowIndex != -1) {
-		//
-		//	}
-		//}
-	}
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex != -1)
+            {
+                Bank editingBank = inputBase[e.RowIndex];
+                Editing edit = new Editing(editingBank,e.RowIndex,dataGridView1);
+                edit.ShowDialog();
+            }
+        }
+    }
 }

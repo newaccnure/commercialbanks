@@ -166,7 +166,7 @@ namespace BankBankBank
 
 		public override string ToString()
 		{
-			return String.Format("{0}/{1}/{2}/{3}/{4}/{5}/{6}/{7}/{8}/{9}", Name, Country, City,
+			return String.Format("{0}#{1}#{2}#{3}#{4}#{5}#{6}#{7}#{8}#{9}", Name, Country, City,
 				Address, ControlForm, Percent, Term, PosToAdd, PosToGet, AddingPerc);
 		}
 		public static string ConvertBoolData(string data) {

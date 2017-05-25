@@ -45,11 +45,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Adding_Editing.cs">
+    <Compile Include="Adding_Deleting_Editing.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Adding_Editing.Designer.cs">
-      <DependentUpon>Adding_Editing.cs</DependentUpon>
+    <Compile Include="Adding_Deleting_Editing.Designer.cs">
+      <DependentUpon>Adding_Deleting_Editing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editing.Designer.cs">
+      <DependentUpon>Editing.cs</DependentUpon>
     </Compile>
     <Compile Include="MainMenu.cs">
       <SubType>Form</SubType>
@@ -65,8 +71,11 @@
     <Compile Include="Search.Designer.cs">
       <DependentUpon>Search.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Adding_Editing.resx">
-      <DependentUpon>Adding_Editing.cs</DependentUpon>
+    <EmbeddedResource Include="Adding_Deleting_Editing.resx">
+      <DependentUpon>Adding_Deleting_Editing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editing.resx">
+      <DependentUpon>Editing.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>

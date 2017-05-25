@@ -30,7 +30,7 @@ namespace BankBankBank
 
 		private void button2_Click_1(object sender, EventArgs e)
 		{
-			Adding_Editing add_ed = new Adding_Editing();
+			Adding_Deleting_Editing add_ed = new Adding_Deleting_Editing();
 			Hide();
 			add_ed.ShowDialog();
 			Dispose();
@@ -38,7 +38,7 @@ namespace BankBankBank
 
 		private void pictureBox1_Click(object sender, EventArgs e)
 		{
-			MessageBox.Show("Наше приложение лучшее в мире.\nЭто достаточно, чтобы им пользоваться");
+			MessageBox.Show("Наше приложение лучшее в мире.\nЭтого достаточно, чтобы им пользоваться");
 		}
 	}
 }

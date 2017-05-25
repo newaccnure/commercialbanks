@@ -7,5 +7,6 @@ c:\users\андрей\documents\visual studio 2017\Projects\BankBankBank\BankBan
 c:\users\андрей\documents\visual studio 2017\Projects\BankBankBank\BankBankBank\obj\Debug\BankBankBank.csproj.GenerateResource.Cache
 c:\users\андрей\documents\visual studio 2017\Projects\BankBankBank\BankBankBank\obj\Debug\BankBankBank.exe
 c:\users\андрей\documents\visual studio 2017\Projects\BankBankBank\BankBankBank\obj\Debug\BankBankBank.pdb
-c:\users\андрей\documents\visual studio 2017\Projects\BankBankBank\BankBankBank\obj\Debug\BankBankBank.Adding_Editing.resources
 c:\users\андрей\documents\visual studio 2017\Projects\BankBankBank\BankBankBank\obj\Debug\BankBankBank.Search.resources
+C:\Users\Андрей\Documents\Visual Studio 2017\Projects\BankBankBank\BankBankBank\obj\Debug\BankBankBank.Adding_Deleting_Editing.resources
+C:\Users\Андрей\Documents\Visual Studio 2017\Projects\BankBankBank\BankBankBank\obj\Debug\BankBankBank.Editing.resources
