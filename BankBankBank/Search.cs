@@ -1,30 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.IO;
-using System.Runtime.Serialization.Formatters.Binary;
+
 namespace BankBankBank
 {
 	public partial class Search : Form
 	{
 		private List<Bank> inputBase;
-
-		public Search()
+        private string pathToBase;
+		public Search(string path)
 		{
 			InitializeComponent();
+            pathToBase = path;
 			ControlFormbox.SelectedItem = "Не имеет значения";
 			CountryBox.SelectedItem = "Не имеет значения";
 		}
 
 		private void button1_Click(object sender, EventArgs e)//Переход в главное меню
 		{
-			MainMenu main_menu = new MainMenu();
+			MainMenu main_menu = new MainMenu(pathToBase);
 			Hide();
 			main_menu.ShowDialog();
 			Dispose();
@@ -57,7 +52,8 @@ namespace BankBankBank
 					for (int i = 0; i < inputBase.Count(); i++)
 					{
 						double currentProfit = 1;
-						if (inputBase[i].isSuitable(ControlFormbox.SelectedItem.ToString(),CountryBox.SelectedItem.ToString(), PosToAddbox.Checked))
+						if (inputBase[i].isSuitable(ControlFormbox.SelectedItem.ToString(),
+                            CountryBox.SelectedItem.ToString(), PosToAddbox.Checked))
 						{
 							double percent = inputBase[i].Percent;
 							if (inputBase[i].PosToGet)
@@ -96,7 +92,7 @@ namespace BankBankBank
 
 		private void Search_Load(object sender, EventArgs e) //Загрузка базы данных при открытии формы для поиска
 		{
-			inputBase = Bank.ReadBase("dataBase.txt");
+			inputBase = Bank.ReadBase(pathToBase);
 			for (int i = 0; i < inputBase.Count(); i++)
 			{
 				string[] line = inputBase[i].ToString().Split('#');
@@ -143,14 +139,24 @@ namespace BankBankBank
 
 		private void button3_Click(object sender, EventArgs e)//Возврат к изначальной базе
 		{
-			dataGridView2.Rows.Clear();
-			for (int i = 0; i < inputBase.Count(); i++)
-			{
-				string[] line = inputBase[i].ToString().Split('#');
-				line = Bank.ConvertData(line);
-				dataGridView2.Rows.Add(line);
-				label6.Visible = false;
-			}
-		}
-	}
+            MyStream.Refresh(inputBase, dataGridView2);
+            label6.Visible = false;
+        }
+
+        private void asdToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                inputBase = MyStream.Open(out pathToBase);
+            }
+            catch (Exception) {
+                MessageBox.Show("Неверный формат файла");
+            }
+            MyStream.Refresh(inputBase, dataGridView2);
+        }
+        private void asdToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            MyStream.Save(inputBase);
+        }
+    }
 }

@@ -69,9 +69,13 @@
             this.CountryBox = new BankBankBank.MyTextBox();
             this.CityBox = new BankBankBank.MyTextBox();
             this.StreetBox = new BankBankBank.MyTextBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.asdToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.asdToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.Termbox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // MainMenubutton
@@ -99,16 +103,17 @@
             // 
             // Namebox
             // 
-            this.Namebox.Location = new System.Drawing.Point(28, 64);
+            this.Namebox.Location = new System.Drawing.Point(28, 78);
             this.Namebox.Name = "Namebox";
             this.Namebox.Size = new System.Drawing.Size(134, 22);
             this.Namebox.TabIndex = 0;
+            this.Namebox.TextChanged += new System.EventHandler(this.Namebox_TextChanged);
             // 
             // Namelabel
             // 
             this.Namelabel.AutoSize = true;
             this.Namelabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Namelabel.Location = new System.Drawing.Point(28, 26);
+            this.Namelabel.Location = new System.Drawing.Point(28, 43);
             this.Namelabel.Name = "Namelabel";
             this.Namelabel.Size = new System.Drawing.Size(140, 20);
             this.Namelabel.TabIndex = 4;
@@ -118,7 +123,7 @@
             // 
             this.CountryLabel.AutoSize = true;
             this.CountryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CountryLabel.Location = new System.Drawing.Point(219, 26);
+            this.CountryLabel.Location = new System.Drawing.Point(219, 43);
             this.CountryLabel.Name = "CountryLabel";
             this.CountryLabel.Size = new System.Drawing.Size(71, 20);
             this.CountryLabel.TabIndex = 6;
@@ -128,7 +133,7 @@
             // 
             this.CityLabel.AutoSize = true;
             this.CityLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CityLabel.Location = new System.Drawing.Point(381, 26);
+            this.CityLabel.Location = new System.Drawing.Point(381, 43);
             this.CityLabel.Name = "CityLabel";
             this.CityLabel.Size = new System.Drawing.Size(61, 20);
             this.CityLabel.TabIndex = 7;
@@ -138,7 +143,7 @@
             // 
             this.StreetLabel.AutoSize = true;
             this.StreetLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.StreetLabel.Location = new System.Drawing.Point(543, 26);
+            this.StreetLabel.Location = new System.Drawing.Point(540, 43);
             this.StreetLabel.Name = "StreetLabel";
             this.StreetLabel.Size = new System.Drawing.Size(60, 20);
             this.StreetLabel.TabIndex = 10;
@@ -154,7 +159,7 @@
             "Муниципальная",
             "Межгосударственная",
             "Неизвестно"});
-            this.ControlFormBox.Location = new System.Drawing.Point(671, 64);
+            this.ControlFormBox.Location = new System.Drawing.Point(671, 76);
             this.ControlFormBox.Name = "ControlFormBox";
             this.ControlFormBox.Size = new System.Drawing.Size(182, 24);
             this.ControlFormBox.TabIndex = 4;
@@ -164,7 +169,7 @@
             // 
             this.ControlFormLabel.AutoSize = true;
             this.ControlFormLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ControlFormLabel.Location = new System.Drawing.Point(683, 26);
+            this.ControlFormLabel.Location = new System.Drawing.Point(683, 43);
             this.ControlFormLabel.Name = "ControlFormLabel";
             this.ControlFormLabel.Size = new System.Drawing.Size(170, 20);
             this.ControlFormLabel.TabIndex = 12;
@@ -174,7 +179,7 @@
             // 
             this.PercentLabel.AutoSize = true;
             this.PercentLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.PercentLabel.Location = new System.Drawing.Point(12, 111);
+            this.PercentLabel.Location = new System.Drawing.Point(12, 122);
             this.PercentLabel.Name = "PercentLabel";
             this.PercentLabel.Size = new System.Drawing.Size(190, 40);
             this.PercentLabel.TabIndex = 13;
@@ -184,7 +189,7 @@
             // 
             this.PosToAddbox.AutoSize = true;
             this.PosToAddbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.PosToAddbox.Location = new System.Drawing.Point(884, 64);
+            this.PosToAddbox.Location = new System.Drawing.Point(884, 76);
             this.PosToAddbox.Name = "PosToAddbox";
             this.PosToAddbox.Size = new System.Drawing.Size(72, 24);
             this.PosToAddbox.TabIndex = 5;
@@ -195,7 +200,7 @@
             // 
             this.PosToAddLabel.AutoSize = true;
             this.PosToAddLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.PosToAddLabel.Location = new System.Drawing.Point(880, 26);
+            this.PosToAddLabel.Location = new System.Drawing.Point(880, 43);
             this.PosToAddLabel.Name = "PosToAddLabel";
             this.PosToAddLabel.Size = new System.Drawing.Size(228, 20);
             this.PosToAddLabel.TabIndex = 18;
@@ -212,7 +217,7 @@
             // 
             this.TermLabel.AutoSize = true;
             this.TermLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.TermLabel.Location = new System.Drawing.Point(219, 122);
+            this.TermLabel.Location = new System.Drawing.Point(219, 131);
             this.TermLabel.Name = "TermLabel";
             this.TermLabel.Size = new System.Drawing.Size(56, 20);
             this.TermLabel.TabIndex = 20;
@@ -332,7 +337,7 @@
             // 
             this.PosToGetLabel.AutoSize = true;
             this.PosToGetLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.PosToGetLabel.Location = new System.Drawing.Point(338, 111);
+            this.PosToGetLabel.Location = new System.Drawing.Point(338, 122);
             this.PosToGetLabel.Name = "PosToGetLabel";
             this.PosToGetLabel.Size = new System.Drawing.Size(170, 40);
             this.PosToGetLabel.TabIndex = 23;
@@ -353,7 +358,7 @@
             // 
             this.AddingPercLabel.AutoSize = true;
             this.AddingPercLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.AddingPercLabel.Location = new System.Drawing.Point(540, 111);
+            this.AddingPercLabel.Location = new System.Drawing.Point(540, 120);
             this.AddingPercLabel.Name = "AddingPercLabel";
             this.AddingPercLabel.Size = new System.Drawing.Size(206, 20);
             this.AddingPercLabel.TabIndex = 25;
@@ -405,7 +410,7 @@
             // CountryBox
             // 
             this.CountryBox.AllowSpace = false;
-            this.CountryBox.Location = new System.Drawing.Point(198, 65);
+            this.CountryBox.Location = new System.Drawing.Point(198, 78);
             this.CountryBox.Name = "CountryBox";
             this.CountryBox.Size = new System.Drawing.Size(120, 22);
             this.CountryBox.TabIndex = 1;
@@ -414,7 +419,7 @@
             // CityBox
             // 
             this.CityBox.AllowSpace = false;
-            this.CityBox.Location = new System.Drawing.Point(342, 64);
+            this.CityBox.Location = new System.Drawing.Point(342, 78);
             this.CityBox.Name = "CityBox";
             this.CityBox.Size = new System.Drawing.Size(138, 22);
             this.CityBox.TabIndex = 2;
@@ -423,11 +428,37 @@
             // StreetBox
             // 
             this.StreetBox.AllowSpace = false;
-            this.StreetBox.Location = new System.Drawing.Point(518, 64);
+            this.StreetBox.Location = new System.Drawing.Point(518, 78);
             this.StreetBox.Name = "StreetBox";
             this.StreetBox.Size = new System.Drawing.Size(106, 22);
             this.StreetBox.TabIndex = 3;
             this.StreetBox.Text = "Неизвестно";
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.asdToolStripMenuItem,
+            this.asdToolStripMenuItem1});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1240, 28);
+            this.menuStrip1.TabIndex = 27;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // asdToolStripMenuItem
+            // 
+            this.asdToolStripMenuItem.Name = "asdToolStripMenuItem";
+            this.asdToolStripMenuItem.Size = new System.Drawing.Size(79, 24);
+            this.asdToolStripMenuItem.Text = "Открыть";
+            this.asdToolStripMenuItem.Click += new System.EventHandler(this.asdToolStripMenuItem_Click);
+            // 
+            // asdToolStripMenuItem1
+            // 
+            this.asdToolStripMenuItem1.Name = "asdToolStripMenuItem1";
+            this.asdToolStripMenuItem1.Size = new System.Drawing.Size(95, 24);
+            this.asdToolStripMenuItem1.Text = "Сохранить";
+            this.asdToolStripMenuItem1.Click += new System.EventHandler(this.asdToolStripMenuItem1_Click);
             // 
             // Adding_Deleting_Editing
             // 
@@ -435,6 +466,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1240, 719);
+            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.StreetBox);
             this.Controls.Add(this.CityBox);
@@ -474,6 +506,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.Termbox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -518,5 +552,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem asdToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem asdToolStripMenuItem1;
     }
 }

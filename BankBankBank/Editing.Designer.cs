@@ -265,6 +265,7 @@
             this.Namebox.Name = "Namebox";
             this.Namebox.Size = new System.Drawing.Size(134, 22);
             this.Namebox.TabIndex = 26;
+            this.Namebox.TextChanged += new System.EventHandler(this.Namebox_TextChanged);
             // 
             // button1
             // 

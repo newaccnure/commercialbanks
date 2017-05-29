@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
 
@@ -16,6 +11,7 @@ namespace BankBankBank
         Bank EditingBank;
         int RowIndex;
         DataGridView Spreadsheet;
+
         public Editing(Bank editingBank,int rowIndex,DataGridView spreadsheet)
         {
             InitializeComponent();
@@ -34,6 +30,7 @@ namespace BankBankBank
             OnCardAddingBox.Checked = !editingBank.AddingPerc;
             Termbox.Value = editingBank.Term;
         }
+
         public static double Transform(string input)//Преобразование строки в тип double
         {
             double result;
@@ -44,7 +41,8 @@ namespace BankBankBank
             result = Convert.ToDouble(input);
             return result;
         }
-        private void Accept(object sender, EventArgs e)
+
+        private void Accept(object sender, EventArgs e)//Проверка ввода данных и внесение изменений
         {
             double percents;
             bool isFull = true;
@@ -103,8 +101,9 @@ namespace BankBankBank
             if (isFull)
             {
                 percents = Transform(Percentbox.Text);
-                EditingBank = new Bank(Namebox.Text.Trim(), Country, City, StreetBox.Text.Trim(), ControlFormBox.Text, percents,
-                    Convert.ToInt32(Termbox.Value), PosToAddbox.Checked, PosToGetbox.Checked, AddingPercrb.Checked);
+                EditingBank = new Bank(Namebox.Text.Trim(), Country, City, StreetBox.Text.Trim(), 
+                    ControlFormBox.Text, percents, Convert.ToInt32(Termbox.Value), 
+                    PosToAddbox.Checked, PosToGetbox.Checked, AddingPercrb.Checked);
                 string[] line = EditingBank.ToString().Split('#');
                 line = Bank.ConvertData(line);
                 Spreadsheet.Rows.RemoveAt(RowIndex);
@@ -120,6 +119,14 @@ namespace BankBankBank
         private void button1_Click(object sender, EventArgs e)
         {
             Dispose();
+        }
+
+        private void Namebox_TextChanged(object sender, EventArgs e)
+        {
+            while (Namebox.Text.Contains('#'))
+            {
+                Namebox.Text = Namebox.Text.Remove(Namebox.Text.IndexOf('#'), 1);
+            }
         }
     }
 }

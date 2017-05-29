@@ -51,6 +51,14 @@
     <Compile Include="Adding_Deleting_Editing.Designer.cs">
       <DependentUpon>Adding_Deleting_Editing.cs</DependentUpon>
     </Compile>
+    <Compile Include="Bank.cs" />
+    <Compile Include="MyStream.cs" />
+    <Compile Include="MyTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="NumericTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Editing.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +101,7 @@
     <EmbeddedResource Include="Search.resx">
       <DependentUpon>Search.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

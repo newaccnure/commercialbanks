@@ -1,28 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.IO;
-using System.Text.RegularExpressions;
-using System.Runtime.Serialization.Formatters.Binary;
 
 namespace BankBankBank
 {
 	public partial class MainMenu : Form
 	{
-		public MainMenu()
+        private string pathToBase;
+		public MainMenu(string path)
 		{
 			InitializeComponent();
-			MyTextBox m = new MyTextBox();
+            pathToBase = path;
 		}
+
 		private void button1_Click(object sender, EventArgs e)
 		{
-			Search search = new Search();
+			Search search = new Search(pathToBase);
 			Hide();
 			search.ShowDialog();
 			Dispose();
@@ -30,7 +22,7 @@ namespace BankBankBank
 
 		private void button2_Click_1(object sender, EventArgs e)
 		{
-			Adding_Deleting_Editing add_ed = new Adding_Deleting_Editing();
+			Adding_Deleting_Editing add_ed = new Adding_Deleting_Editing(pathToBase);
 			Hide();
 			add_ed.ShowDialog();
 			Dispose();
