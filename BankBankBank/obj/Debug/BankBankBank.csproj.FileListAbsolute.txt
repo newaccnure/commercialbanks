@@ -6,7 +6,7 @@ c:\users\андрей\documents\visual studio 2017\Projects\BankBankBank\BankBan
 c:\users\андрей\documents\visual studio 2017\Projects\BankBankBank\BankBankBank\obj\Debug\BankBankBank.csproj.GenerateResource.Cache
 c:\users\андрей\documents\visual studio 2017\Projects\BankBankBank\BankBankBank\obj\Debug\BankBankBank.exe
 c:\users\андрей\documents\visual studio 2017\Projects\BankBankBank\BankBankBank\obj\Debug\BankBankBank.pdb
-C:\Users\Андрей\Documents\Visual Studio 2017\Projects\BankBankBank\BankBankBank\obj\Debug\BankBankBank.Adding_Deleting_Editing.resources
-C:\Users\Андрей\Documents\Visual Studio 2017\Projects\BankBankBank\BankBankBank\obj\Debug\BankBankBank.Editing.resources
-C:\Users\Андрей\Documents\Visual Studio 2017\Projects\BankBankBank\BankBankBank\obj\Debug\BankBankBank.MainMenu.resources
-C:\Users\Андрей\Documents\Visual Studio 2017\Projects\BankBankBank\BankBankBank\obj\Debug\BankBankBank.Search.resources
+C:\Users\Андрей\documents\visual studio 2017\Projects\BankBankBank\BankBankBank\obj\Debug\BankBankBank.Adding_Deleting_EditingForm.resources
+C:\Users\Андрей\documents\visual studio 2017\Projects\BankBankBank\BankBankBank\obj\Debug\BankBankBank.EditingForm.resources
+C:\Users\Андрей\documents\visual studio 2017\Projects\BankBankBank\BankBankBank\obj\Debug\BankBankBank.MainMenuForm.resources
+C:\Users\Андрей\documents\visual studio 2017\Projects\BankBankBank\BankBankBank\obj\Debug\BankBankBank.SearchForm.resources

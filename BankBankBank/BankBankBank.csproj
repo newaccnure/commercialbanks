@@ -45,11 +45,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Adding_Deleting_Editing.cs">
+    <Compile Include="Adding_Deleting_EditingForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Adding_Deleting_Editing.Designer.cs">
-      <DependentUpon>Adding_Deleting_Editing.cs</DependentUpon>
+    <Compile Include="Adding_Deleting_EditingForm.Designer.cs">
+      <DependentUpon>Adding_Deleting_EditingForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Bank.cs" />
     <Compile Include="MyStream.cs" />
@@ -59,34 +59,34 @@
     <Compile Include="NumericTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Editing.cs">
+    <Compile Include="EditingForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Editing.Designer.cs">
-      <DependentUpon>Editing.cs</DependentUpon>
+    <Compile Include="EditingForm.Designer.cs">
+      <DependentUpon>EditingForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainMenu.cs">
+    <Compile Include="MainMenuForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainMenu.Designer.cs">
-      <DependentUpon>MainMenu.cs</DependentUpon>
+    <Compile Include="MainMenuForm.Designer.cs">
+      <DependentUpon>MainMenuForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Search.cs">
+    <Compile Include="SearchForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Search.Designer.cs">
-      <DependentUpon>Search.cs</DependentUpon>
+    <Compile Include="SearchForm.Designer.cs">
+      <DependentUpon>SearchForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Adding_Deleting_Editing.resx">
-      <DependentUpon>Adding_Deleting_Editing.cs</DependentUpon>
+    <EmbeddedResource Include="Adding_Deleting_EditingForm.resx">
+      <DependentUpon>Adding_Deleting_EditingForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Editing.resx">
-      <DependentUpon>Editing.cs</DependentUpon>
+    <EmbeddedResource Include="EditingForm.resx">
+      <DependentUpon>EditingForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainMenu.resx">
-      <DependentUpon>MainMenu.cs</DependentUpon>
+    <EmbeddedResource Include="MainMenuForm.resx">
+      <DependentUpon>MainMenuForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -98,8 +98,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Search.resx">
-      <DependentUpon>Search.cs</DependentUpon>
+    <EmbeddedResource Include="SearchForm.resx">
+      <DependentUpon>SearchForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">

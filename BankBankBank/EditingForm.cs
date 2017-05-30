@@ -6,13 +6,13 @@ using System.Text.RegularExpressions;
 
 namespace BankBankBank
 {
-    public partial class Editing : Form
+    public partial class EditingForm : Form
     {
         Bank EditingBank;
         int RowIndex;
         DataGridView Spreadsheet;
 
-        public Editing(Bank editingBank,int rowIndex,DataGridView spreadsheet)
+        public EditingForm(Bank editingBank,int rowIndex,DataGridView spreadsheet)
         {
             InitializeComponent();
             Spreadsheet = spreadsheet;

@@ -3,10 +3,10 @@ using System.Windows.Forms;
 
 namespace BankBankBank
 {
-	public partial class MainMenu : Form
+	public partial class MainMenuForm : Form
 	{
         private string pathToBase;
-		public MainMenu(string path)
+		public MainMenuForm(string path)
 		{
 			InitializeComponent();
             pathToBase = path;
@@ -14,7 +14,7 @@ namespace BankBankBank
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-			Search search = new Search(pathToBase);
+			SearchForm search = new SearchForm(pathToBase);
 			Hide();
 			search.ShowDialog();
 			Dispose();
@@ -22,7 +22,7 @@ namespace BankBankBank
 
 		private void button2_Click_1(object sender, EventArgs e)
 		{
-			Adding_Deleting_Editing add_ed = new Adding_Deleting_Editing(pathToBase);
+			Adding_Deleting_EditingForm add_ed = new Adding_Deleting_EditingForm(pathToBase);
 			Hide();
 			add_ed.ShowDialog();
 			Dispose();

@@ -1,71 +1,59 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
-  <Class Name="BankBankBank.Adding_Deleting_Editing" Collapsed="true">
-    <Position X="0.5" Y="0.5" Width="1.5" />
+  <Class Name="BankBankBank.Adding_Deleting_EditingForm" Collapsed="true">
+    <Position X="3.5" Y="2.25" Width="2.75" />
     <TypeIdentifier>
-      <HashCode>AAlIAAABkjABoAABAECABkQCMAi4Z0EBAHAgIABAoAI=</HashCode>
-      <FileName>Adding_Deleting_Editing.cs</FileName>
+      <HashCode>ARlIAAgBkjABoAABAETABkQCMAi4Z0EBAMAgIABAoAI=</HashCode>
+      <FileName>Adding_Deleting_EditingForm.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="BankBankBank.Bank">
-    <Position X="8" Y="1.75" Width="2.25" />
+    <Position X="8.5" Y="1.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAABAAAAAAAACAAMACAAAAQAAAIAAABiEAQACIBAAEA=</HashCode>
       <FileName>Bank.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="BankBankBank.Editing" Collapsed="true">
-    <Position X="9.5" Y="0.5" Width="1.5" />
+  <Class Name="BankBankBank.EditingForm" Collapsed="true">
+    <Position X="0.75" Y="2.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>BYFIAAAAgCABIAABAECABkQCMAAYBEgBgEAoIAAAoAA=</HashCode>
-      <FileName>Editing.cs</FileName>
+      <FileName>EditingForm.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="BankBankBank.MainMenu" Collapsed="true">
-    <Position X="7.75" Y="0.5" Width="1.5" />
+  <Class Name="BankBankBank.MainMenuForm" Collapsed="true">
+    <Position X="5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAIAABACAAgBAAAACAAAACAAAYABAAAEAAAABAAAA=</HashCode>
-      <FileName>MainMenu.cs</FileName>
+      <FileName>MainMenuForm.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="BankBankBank.MyTextBox" Collapsed="true">
-    <Position X="0.5" Y="1.5" Width="1.5" />
+    <Position X="2.5" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAgAAAAAAAAAEAEAAABAAAAAAAAAAAIAAAAAAAAI=</HashCode>
       <FileName>MyTextBox.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="BankBankBank.NumericTextBox" Collapsed="true">
-    <Position X="4.5" Y="3.25" Width="1.5" />
+    <Position X="4.5" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AgAAAgAAAAAAAAAEAEAAABAAAAAAAAAAAAAAAAAAAAI=</HashCode>
       <FileName>NumericTextBox.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="BankBankBank.Program" Collapsed="true">
-    <Position X="4" Y="1.5" Width="1.5" />
+  <Class Name="BankBankBank.SearchForm" Collapsed="true">
+    <Position X="6.5" Y="2.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
-      <FileName>Program.cs</FileName>
+      <HashCode>ATADACgBkjAIgBKBgECEBkACIBCABQMAAPAAAAAAIAQ=</HashCode>
+      <FileName>SearchForm.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="BankBankBank.Search" Collapsed="true">
-    <Position X="0.5" Y="2.5" Width="1.5" />
+  <Class Name="BankBankBank.MyStream" Collapsed="true">
+    <Position X="6.5" Y="4.25" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>ACADACABkjAIgBKBgECEBkACIBCABQMAAPAAAAAAIAQ=</HashCode>
-      <FileName>Search.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="BankBankBank.Properties.Resources" Collapsed="true">
-    <Position X="5.75" Y="1.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAIAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="BankBankBank.Properties.Settings" Collapsed="true">
-    <Position X="4" Y="2.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAIAAAABAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MyStream.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

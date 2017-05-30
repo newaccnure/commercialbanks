@@ -1,6 +1,6 @@
 ﻿namespace BankBankBank
 {
-	partial class Adding_Deleting_Editing
+	partial class Adding_Deleting_EditingForm
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Adding_Deleting_Editing));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Adding_Deleting_EditingForm));
             this.MainMenubutton = new System.Windows.Forms.Button();
             this.Addingbutton = new System.Windows.Forms.Button();
             this.Namebox = new System.Windows.Forms.TextBox();
@@ -70,8 +70,8 @@
             this.CityBox = new BankBankBank.MyTextBox();
             this.StreetBox = new BankBankBank.MyTextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.asdToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.asdToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.OpenItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.SaveItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.Termbox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -99,7 +99,7 @@
             this.Addingbutton.Text = "Добавить новый банк";
             this.toolTip1.SetToolTip(this.Addingbutton, "Заполните поля с информацией\r\nдля добавления банка в список банков.");
             this.Addingbutton.UseVisualStyleBackColor = true;
-            this.Addingbutton.Click += new System.EventHandler(this.button2_Click);
+            this.Addingbutton.Click += new System.EventHandler(this.Addingbutton_Click);
             // 
             // Namebox
             // 
@@ -169,11 +169,11 @@
             // 
             this.ControlFormLabel.AutoSize = true;
             this.ControlFormLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ControlFormLabel.Location = new System.Drawing.Point(683, 43);
+            this.ControlFormLabel.Location = new System.Drawing.Point(667, 43);
             this.ControlFormLabel.Name = "ControlFormLabel";
-            this.ControlFormLabel.Size = new System.Drawing.Size(170, 20);
+            this.ControlFormLabel.Size = new System.Drawing.Size(199, 20);
             this.ControlFormLabel.TabIndex = 12;
-            this.ControlFormLabel.Text = "Форма управления";
+            this.ControlFormLabel.Text = "Форма собственности";
             // 
             // PercentLabel
             // 
@@ -255,6 +255,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(1185, 361);
             this.dataGridView1.TabIndex = 21;
             this.dataGridView1.TabStop = false;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // Column1
@@ -295,6 +296,7 @@
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
             this.Column6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Column6.Width = 60;
             // 
             // Column8
             // 
@@ -302,18 +304,21 @@
             this.Column8.Name = "Column8";
             this.Column8.ReadOnly = true;
             this.Column8.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Column8.Width = 50;
             // 
             // Column9
             // 
             this.Column9.HeaderText = "Возможность пополнения";
             this.Column9.Name = "Column9";
             this.Column9.ReadOnly = true;
+            this.Column9.Width = 90;
             // 
             // Column7
             // 
             this.Column7.HeaderText = "Возможность частичного снятия";
             this.Column7.Name = "Column7";
             this.Column7.ReadOnly = true;
+            this.Column7.Width = 90;
             // 
             // Column10
             // 
@@ -331,7 +336,7 @@
             this.Deletebutton.Text = "Удалить выбранный банк";
             this.toolTip1.SetToolTip(this.Deletebutton, "Для удаления выберите одну из ячеек\r\nбанка, который хотите удалить.\r\n");
             this.Deletebutton.UseVisualStyleBackColor = true;
-            this.Deletebutton.Click += new System.EventHandler(this.button3_Click);
+            this.Deletebutton.Click += new System.EventHandler(this.Deletebutton_Click);
             // 
             // PosToGetLabel
             // 
@@ -438,29 +443,29 @@
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.asdToolStripMenuItem,
-            this.asdToolStripMenuItem1});
+            this.OpenItem,
+            this.SaveItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1240, 28);
             this.menuStrip1.TabIndex = 27;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // asdToolStripMenuItem
+            // OpenItem
             // 
-            this.asdToolStripMenuItem.Name = "asdToolStripMenuItem";
-            this.asdToolStripMenuItem.Size = new System.Drawing.Size(79, 24);
-            this.asdToolStripMenuItem.Text = "Открыть";
-            this.asdToolStripMenuItem.Click += new System.EventHandler(this.asdToolStripMenuItem_Click);
+            this.OpenItem.Name = "OpenItem";
+            this.OpenItem.Size = new System.Drawing.Size(79, 24);
+            this.OpenItem.Text = "Открыть";
+            this.OpenItem.Click += new System.EventHandler(this.OpenItem_Click);
             // 
-            // asdToolStripMenuItem1
+            // SaveItem
             // 
-            this.asdToolStripMenuItem1.Name = "asdToolStripMenuItem1";
-            this.asdToolStripMenuItem1.Size = new System.Drawing.Size(95, 24);
-            this.asdToolStripMenuItem1.Text = "Сохранить";
-            this.asdToolStripMenuItem1.Click += new System.EventHandler(this.asdToolStripMenuItem1_Click);
+            this.SaveItem.Name = "SaveItem";
+            this.SaveItem.Size = new System.Drawing.Size(95, 24);
+            this.SaveItem.Text = "Сохранить";
+            this.SaveItem.Click += new System.EventHandler(this.SaveItem_Click);
             // 
-            // Adding_Deleting_Editing
+            // Adding_Deleting_EditingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -498,9 +503,9 @@
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(1258, 766);
             this.MinimumSize = new System.Drawing.Size(1258, 766);
-            this.Name = "Adding_Deleting_Editing";
+            this.Name = "Adding_Deleting_EditingForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Добавление/удаление банка";
+            this.Text = "Изменение банков";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Adding_Editing_FormClosed);
             this.Load += new System.EventHandler(this.Adding_Editing_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Termbox)).EndInit();
@@ -542,6 +547,9 @@
 		private MyTextBox CityBox;
 		private MyTextBox StreetBox;
 		private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem OpenItem;
+        private System.Windows.Forms.ToolStripMenuItem SaveItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
@@ -552,8 +560,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem asdToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem asdToolStripMenuItem1;
     }
 }

@@ -5,11 +5,11 @@ using System.Windows.Forms;
 
 namespace BankBankBank
 {
-	public partial class Search : Form
+	public partial class SearchForm : Form
 	{
 		private List<Bank> inputBase;
         private string pathToBase;
-		public Search(string path)
+		public SearchForm(string path)
 		{
 			InitializeComponent();
             pathToBase = path;
@@ -19,7 +19,7 @@ namespace BankBankBank
 
 		private void button1_Click(object sender, EventArgs e)//Переход в главное меню
 		{
-			MainMenu main_menu = new MainMenu(pathToBase);
+			MainMenuForm main_menu = new MainMenuForm(pathToBase);
 			Hide();
 			main_menu.ShowDialog();
 			Dispose();
@@ -39,56 +39,6 @@ namespace BankBankBank
 			}
 			else SumTrackBar.Value = 0;
 		} 
-
-		private void button2_Click(object sender, EventArgs e) //Поиск лучшего банка, по критериям
-		{
-			double maximalProfit = 1;
-			if (inputBase.Count() > 0)
-			{
-				int term = Convert.ToInt32(Termbox.Value);
-				Bank result = new Bank();
-				if (term != 0)
-				{
-					for (int i = 0; i < inputBase.Count(); i++)
-					{
-						double currentProfit = 1;
-						if (inputBase[i].isSuitable(ControlFormbox.SelectedItem.ToString(),
-                            CountryBox.SelectedItem.ToString(), PosToAddbox.Checked))
-						{
-							double percent = inputBase[i].Percent;
-							if (inputBase[i].PosToGet)
-							{
-								currentProfit *= Math.Pow(1 + percent / 1200, Convert.ToInt32(Termbox.Value));
-							}
-							else {
-								for (int j = 0; j < term / inputBase[i].Term; j++)
-								{
-									currentProfit *= Math.Pow(1 + percent / 1200, inputBase[i].Term);
-								}
-							}
-							if (maximalProfit < currentProfit)
-							{
-								maximalProfit = currentProfit;
-								result = inputBase[i];
-							}
-						}
-					}
-					if (result.Term!=0)
-					{
-						int profit = Convert.ToInt32((maximalProfit - 1) * Convert.ToDouble(SumNumericBox.Text));
-						dataGridView2.Rows.Clear();
-						string[] line = result.ToString().Split('#');
-						line = Bank.ConvertData(line);
-						dataGridView2.Rows.Add(line);
-						label6.Visible = true;
-						label6.Text = String.Format("Ваш доход составит:{0}",profit);
-					}
-					else MessageBox.Show("Соответствий не найдено");
-				}
-				else MessageBox.Show("Выберите срок для своего вклада");
-			}
-			else MessageBox.Show("База пуста");
-		}
 
 		private void Search_Load(object sender, EventArgs e) //Загрузка базы данных при открытии формы для поиска
 		{
@@ -157,6 +107,57 @@ namespace BankBankBank
         private void asdToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             MyStream.Save(inputBase);
+        }
+
+        private void SearchButton_Click(object sender, EventArgs e)//Поиск лучшего банка, по критериям
+        {
+            double maximalProfit = 1;
+            if (inputBase.Count() > 0)
+            {
+                int term = Convert.ToInt32(Termbox.Value);
+                Bank result = new Bank();
+                if (term != 0)
+                {
+                    for (int i = 0; i < inputBase.Count(); i++)
+                    {
+                        double currentProfit = 1;
+                        if (inputBase[i].isSuitable(ControlFormbox.SelectedItem.ToString(),
+                            CountryBox.SelectedItem.ToString(), PosToAddbox.Checked))
+                        {
+                            double percent = inputBase[i].Percent;
+                            if (inputBase[i].PosToGet)
+                            {
+                                currentProfit *= Math.Pow(1 + percent / 1200, Convert.ToInt32(Termbox.Value));
+                            }
+                            else
+                            {
+                                for (int j = 0; j < term / inputBase[i].Term; j++)
+                                {
+                                    currentProfit *= Math.Pow(1 + percent / 1200, inputBase[i].Term);
+                                }
+                            }
+                            if (maximalProfit < currentProfit)
+                            {
+                                maximalProfit = currentProfit;
+                                result = inputBase[i];
+                            }
+                        }
+                    }
+                    if (result.Term != 0)
+                    {
+                        int profit = Convert.ToInt32((maximalProfit - 1) * Convert.ToDouble(SumNumericBox.Text));
+                        dataGridView2.Rows.Clear();
+                        string[] line = result.ToString().Split('#');
+                        line = Bank.ConvertData(line);
+                        dataGridView2.Rows.Add(line);
+                        label6.Visible = true;
+                        label6.Text = String.Format("Ваш доход составит:{0}", profit);
+                    }
+                    else MessageBox.Show("Соответствий не найдено.");
+                }
+                else MessageBox.Show("Выберите срок для своего вклада");
+            }
+            else MessageBox.Show("База пуста");
         }
     }
 }

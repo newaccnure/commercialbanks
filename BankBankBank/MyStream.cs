@@ -32,6 +32,12 @@ namespace BankBankBank
                 else path = "dataBase.txt";
             }
             else path = "dataBase.txt";
+            if (path == "dataBase.txt") {
+                using (FileStream stream = new FileStream("dataBase.txt", FileMode.Open)) {
+                    var serializer = new BinaryFormatter();
+                    result = (List<Bank>)serializer.Deserialize(myStream);
+                }
+            }
             return result;
         }
         public static void Save(List<Bank> banks) {

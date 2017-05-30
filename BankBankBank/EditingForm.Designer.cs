@@ -1,6 +1,6 @@
 ﻿namespace BankBankBank
 {
-    partial class Editing
+    partial class EditingForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Editing));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditingForm));
             this.StreetBox = new BankBankBank.MyTextBox();
             this.CityBox = new BankBankBank.MyTextBox();
             this.CountryBox = new BankBankBank.MyTextBox();
@@ -200,9 +200,9 @@
             this.ControlFormLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ControlFormLabel.Location = new System.Drawing.Point(25, 134);
             this.ControlFormLabel.Name = "ControlFormLabel";
-            this.ControlFormLabel.Size = new System.Drawing.Size(170, 20);
+            this.ControlFormLabel.Size = new System.Drawing.Size(199, 20);
             this.ControlFormLabel.TabIndex = 41;
-            this.ControlFormLabel.Text = "Форма управления";
+            this.ControlFormLabel.Text = "Форма собственности";
             // 
             // ControlFormBox
             // 

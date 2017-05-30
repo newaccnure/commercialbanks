@@ -13,7 +13,7 @@ namespace BankBankBank
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new MainMenu("dataBase.txt"));
+			Application.Run(new MainMenuForm("dataBase.txt"));
 		}
 	}
 }
